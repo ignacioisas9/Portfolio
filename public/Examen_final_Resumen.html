@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Examen final – Resumen</title>
+<style>
+:root{--bg:#faf8f4;--panel:#f1ede5;--ink:#22201c;--mute:#7a746a;--line:#ddd6c8;--acc:#9a3b1e;--accbg:#f3e2d9;--w:340px}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#17160f;--panel:#1f1d15;--ink:#e9e4d8;--mute:#9a9486;--line:#34312a;--acc:#e08b64;--accbg:#33261d}}
+:root[data-theme=dark]{--bg:#17160f;--panel:#1f1d15;--ink:#e9e4d8;--mute:#9a9486;--line:#34312a;--acc:#e08b64;--accbg:#33261d}
+*{box-sizing:border-box}
+html{scroll-behavior:auto;scroll-padding-top:20px}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 Georgia,"Iowan Old Style","Palatino Linotype",serif}
+#side{position:fixed;inset:0 auto 0 0;width:var(--w);background:var(--panel);border-right:1px solid var(--line);display:flex;flex-direction:column;z-index:20;transition:transform .2s}
+#side header{padding:16px 16px 10px;border-bottom:1px solid var(--line)}
+#side h1{font:700 15px/1.3 system-ui,sans-serif;margin:0 0 10px;letter-spacing:.02em}
+#side h1 small{display:block;font-weight:400;color:var(--mute);margin-top:2px}
+.row{display:flex;gap:6px}
+#q{flex:1;min-width:0;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:14px system-ui,sans-serif}
+#q:focus{outline:2px solid var(--acc);outline-offset:-1px}
+.btn{border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:8px;padding:0 10px;font:13px system-ui,sans-serif;cursor:pointer}
+.btn:hover{border-color:var(--acc)}
+nav{overflow:auto;flex:1;padding:8px 8px 40px}
+nav ul{list-style:none;margin:0;padding:0}
+nav li{display:flex;align-items:flex-start;font:14px/1.35 system-ui,sans-serif}
+nav li.hide{display:none}
+nav li.l2{margin-top:10px;font-weight:700}
+nav li.l3{padding-left:14px}
+nav li.l4{padding-left:30px;font-size:13px}
+nav a{flex:1;color:var(--ink);text-decoration:none;padding:5px 8px;border-radius:6px;border-left:3px solid transparent}
+nav a:hover{background:var(--accbg)}
+nav a.on{background:var(--accbg);border-left-color:var(--acc);color:var(--acc);font-weight:600}
+.tg{flex:none;width:20px;height:28px;border:0;background:none;cursor:pointer;color:var(--mute);padding:0;position:relative}
+.tg.sp{cursor:default}
+.tg:not(.sp)::before{content:"";position:absolute;left:6px;top:11px;border:4px solid transparent;border-left:6px solid currentColor;border-right:0;transition:transform .15s}
+.tg[aria-expanded=true]::before{transform:rotate(90deg)}
+main{margin-left:var(--w);padding:48px 56px 120px}
+article{max-width:780px;margin:0 auto}
+article h2{font:700 30px/1.25 system-ui,sans-serif;margin:3.2rem 0 1rem;padding-bottom:.4rem;border-bottom:2px solid var(--acc)}
+article h2:first-child{margin-top:0}
+article h3{font:700 21px/1.3 system-ui,sans-serif;margin:2.4rem 0 .6rem}
+article h4{font:700 17px/1.3 system-ui,sans-serif;margin:1.8rem 0 .4rem;color:var(--acc)}
+h2,h3,h4{position:relative}
+.anchor{position:absolute;left:-1.3em;color:var(--mute);text-decoration:none;opacity:0;font-weight:400}
+h2:hover .anchor,h3:hover .anchor,h4:hover .anchor{opacity:1}
+article p{margin:.7em 0}
+article li{margin:.3em 0}
+article ul,article ol{padding-left:1.5em}
+article table{border-collapse:collapse;margin:1em 0}
+article td,article th{border:1px solid var(--line);padding:6px 10px}
+.eq{display:inline-block;font-style:italic;white-space:nowrap;padding:0 .2em}
+.eq sub{font-size:.7em}
+.frac{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;font-size:.85em;line-height:1.15;margin:0 .15em}
+.frac i{padding:0 .2em}.frac i:first-child{border-bottom:1px solid currentColor}
+.big{font-size:1.6em;vertical-align:middle;font-style:normal;line-height:1}
+#menu{display:none;position:fixed;top:10px;left:10px;z-index:30;padding:8px 12px;font-size:14px;background:var(--panel)}
+#top{position:fixed;right:18px;bottom:18px;z-index:10;display:none;padding:10px 14px}
+#bar{position:fixed;top:0;left:var(--w);right:0;height:3px;z-index:25;background:var(--acc);transform-origin:left;transform:scaleX(0)}
+@media(max-width:900px){
+ #side{transform:translateX(-100%);width:min(88vw,340px)}
+ body.open #side{transform:none;box-shadow:0 0 40px #0006}
+ main{margin-left:0;padding:60px 18px 100px}
+ #menu{display:block}body.open #menu{display:none}#bar{left:0}
+ .anchor{display:none}
+}
+@media print{#side,#menu,#top,#bar{display:none}main{margin:0;padding:0}}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<button id="menu" class="btn" aria-label="Abrir índice">☰ Índice</button>
+<aside id="side">
+ <header>
+  <h1>Examen final – Resumen<small>67 secciones · clic para ir al tema</small></h1>
+  <div class="row">
+   <input id="q" type="search" placeholder="Buscar tema…" autocomplete="off">
+   <button id="fold" class="btn" title="Plegar/desplegar todo">⇕</button>
+   <button id="theme" class="btn" title="Cambiar tema">◐</button>
+  </div>
+ </header>
+ <nav><ul id="toc">
+<li class="l2 has" data-t="1. espacios métricos"><button class="tg" aria-label="Plegar/desplegar" aria-expanded="true"></button><a href="#s0" data-id="s0">1. ESPACIOS MÉTRICOS</a></li>
+<li class="l3 has" data-t="espacio métrico"><button class="tg" aria-label="Plegar/desplegar" aria-expanded="true"></button><a href="#s1" data-id="s1">Espacio Métrico</a></li>
+<li class="l4" data-t="subespacio métrico"><span class="tg sp"></span><a href="#s2" data-id="s2">Subespacio métrico</a></li>
+<li class="l4" data-t="desigualdad de holder"><span class="tg sp"></span><a href="#s3" data-id="s3">Desigualdad de Holder</a></li>
+<li class="l4" data-t="lemas de variación"><span class="tg sp"></span><a href="#s4" data-id="s4">Lemas de Variación</a></li>
+<li class="l3 has" data-t="métrica para una familia de conjuntos"><button class="tg" aria-label="Plegar/desplegar" aria-expanded="true"></button><a href="#s5" data-id="s5">Métrica para una familia de conjuntos</a></li>
+<li class="l4" data-t="dilatado"><span class="tg sp"></span><a href="#s6" data-id="s6">Dilatado</a></li>
+<li class="l3" data-t="espacios separables"><span class="tg sp"></span><a href="#s7" data-id="s7">Espacios separables</a></li>
+<li class="l3 has" data-t="polinomio de bernstein"><button class="tg" aria-label="Plegar/desplegar" aria-expanded="true"></button><a href="#s8" data-id="s8">Polinomio de Bernstein</a></li>
+<li class="l4" data-t="teorema de aproximación de bernstein"><span class="tg sp"></span><a href="#s9" data-id="s9">Teorema de Aproximación de Bernstein</a></li>
+<li class="l4" data-t="teorema de aproximación de weierstrass"><span class="tg sp"></span><a href="#s10" data-id="s10">Teorema de aproximación de Weierstrass</a></li>
+<li class="l3 has" data-t="base de una topología τ"><button class="tg" aria-label="Plegar/desplegar" aria-expanded="true"></button><a href="#s11" data-id="s11">Base de una Topología τ</a></li>
+<li class="l4" data-t="perfectamente separable"><span class="tg sp"></span><a href="#s12" data-id="s12">Perfectamente separable</a></li>
+<li class="l4" data-t="cubrimiento"><span class="tg sp"></span><a href="#s13" data-id="s13">Cubrimiento</a></li>
+<li class="l2 has" data-t="2. espacios completos"><button class="tg" aria-label="Plegar/desplegar" aria-expanded="true"></button><a href="#s14" data-id="s14">2. ESPACIOS COMPLETOS</a></li>
+<li class="l3 has" data-t="sucesiones de cauchy"><button class="tg" aria-label="Plegar/desplegar" aria-expanded="true"></button><a href="#s15" data-id="s15">Sucesiones de Cauchy</a></li>
+<li class="l4" data-t="lema: toda sucesión convergente es de cauchy"><span class="tg sp"></span><a href="#s16" data-id="s16">Lema: Toda sucesión convergente es de Cauchy</a></li>
+<li class="l4" data-t="no toda sucesión de cauchy converge"><span class="tg sp"></span><a href="#s17" data-id="s17">No toda sucesión de Cauchy converge</a></li>
+<li class="l3" data-t="espacio completo"><span class="tg sp"></span><a href="#s18" data-id="s18">Espacio completo</a></li>
+<li class="l3" data-t="si una subsucesión de cauchy converge, converge toda la sucesión"><span class="tg sp"></span><a href="#s19" data-id="s19">Si una subsucesión de Cauchy converge, converge toda la sucesión</a></li>
+<li class="l3" data-t="caracterización mediante bolas cerradas encajadas"><span class="tg sp"></span><a href="#s20" data-id="s20">Caracterización mediante bolas cerradas encajadas</a></li>
+<li class="l3" data-t="ejemplo: (c[a,b], d∞) es completo"><span class="tg sp"></span><a href="#s21" data-id="s21">Ejemplo: (C[a,b], d∞) es completo</a></li>
+<li class="l3" data-t="ejemplo: (c[0,1], d) con la distancia integral no es completo"><span class="tg sp"></span><a href="#s22" data-id="s22">Ejemplo: (C[0,1], d) con la distancia integral NO es completo</a></li>
+<li class="l3" data-t="los espacios ℓᵖ, 1 ≤ p &lt; ∞, son completos"><span class="tg sp"></span><a href="#s23" data-id="s23">Los espacios ℓᵖ, 1 ≤ p &lt; ∞, son completos</a></li>
+<li class="l3" data-t="ℓ∞ también es completo"><span class="tg sp"></span><a href="#s24" data-id="s24">ℓ∞ también es completo</a></li>
+<li class="l3" data-t="teorema del subespacio cerrado"><span class="tg sp"></span><a href="#s25" data-id="s25">Teorema del subespacio cerrado</a></li>
+<li class="l3" data-t="teorema del punto fijo de banach"><span class="tg sp"></span><a href="#s26" data-id="s26">Teorema del punto fijo de Banach</a></li>
+<li class="l3" data-t="extensión de la solución local"><span class="tg sp"></span><a href="#s27" data-id="s27">Extensión de la solución local</a></li>
+<li class="l2 has" data-t="completación de espacios métricos"><button class="tg" aria-label="Plegar/desplegar" aria-expanded="true"></button><a href="#s28" data-id="s28">COMPLETACIÓN DE ESPACIOS MÉTRICOS</a></li>
+<li class="l3" data-t="idea de completación"><span class="tg sp"></span><a href="#s29" data-id="s29">Idea de completación</a></li>
+<li class="l2 has" data-t="3. categoría"><button class="tg" aria-label="Plegar/desplegar" aria-expanded="true"></button><a href="#s30" data-id="s30">3. CATEGORÍA</a></li>
+<li class="l3" data-t="conjuntos nunca densos"><span class="tg sp"></span><a href="#s31" data-id="s31">Conjuntos nunca densos</a></li>
+<li class="l3" data-t="observaciones: unión de conjuntos nunca densos"><span class="tg sp"></span><a href="#s32" data-id="s32">Observaciones: Unión de conjuntos nunca densos</a></li>
+<li class="l3" data-t="conjuntos de primera categoría"><span class="tg sp"></span><a href="#s33" data-id="s33">Conjuntos de primera categoría</a></li>
+<li class="l3" data-t="conjuntos de segunda categoría"><span class="tg sp"></span><a href="#s34" data-id="s34">Conjuntos de segunda categoría</a></li>
+<li class="l3" data-t="proposición: caracterización de los conjuntos de segunda categoría"><span class="tg sp"></span><a href="#s35" data-id="s35">Proposición: caracterización de los conjuntos de segunda categoría</a></li>
+<li class="l3" data-t="teorema de baire: todo espacio métrico completo es de segunda categoría"><span class="tg sp"></span><a href="#s36" data-id="s36">Teorema de Baire: todo espacio métrico completo es de segunda categoría</a></li>
+<li class="l3" data-t="corolario"><span class="tg sp"></span><a href="#s37" data-id="s37">Corolario</a></li>
+<li class="l3" data-t="aplicación: existen funciones continuas que no son diferenciables en ningún punto"><span class="tg sp"></span><a href="#s38" data-id="s38">Aplicación: existen funciones continuas que no son diferenciables en ningún punto</a></li>
+<li class="l3" data-t="proposición: k es de primera categoría"><span class="tg sp"></span><a href="#s39" data-id="s39">Proposición: K es de primera categoría</a></li>
+<li class="l3" data-t="corolario: una función continua que no es diferenciable en ningún punto"><span class="tg sp"></span><a href="#s40" data-id="s40">Corolario: una función continua que no es diferenciable en ningún punto</a></li>
+<li class="l2 has" data-t="4. compacidad"><button class="tg" aria-label="Plegar/desplegar" aria-expanded="true"></button><a href="#s41" data-id="s41">4. COMPACIDAD</a></li>
+<li class="l3 has" data-t="compacidad de fréchet"><button class="tg" aria-label="Plegar/desplegar" aria-expanded="true"></button><a href="#s42" data-id="s42">Compacidad de Fréchet</a></li>
+<li class="l4" data-t="relativamente compacto"><span class="tg sp"></span><a href="#s43" data-id="s43">Relativamente compacto</a></li>
+<li class="l4" data-t="precompacto"><span class="tg sp"></span><a href="#s44" data-id="s44">Precompacto</a></li>
+<li class="l3" data-t="secuencialmente compacto"><span class="tg sp"></span><a href="#s45" data-id="s45">Secuencialmente compacto</a></li>
+<li class="l3" data-t="x es compacto de fréchet ⇔ x es secuencialmente compacto."><span class="tg sp"></span><a href="#s46" data-id="s46">X es compacto de Fréchet ⇔ X es secuencialmente compacto.</a></li>
+<li class="l3" data-t="todo conjunto compacto es cerrado y acotado"><span class="tg sp"></span><a href="#s47" data-id="s47">Todo conjunto compacto es cerrado y acotado</a></li>
+<li class="l3" data-t="todo espacio métrico compacto es completo"><span class="tg sp"></span><a href="#s48" data-id="s48">Todo espacio métrico compacto es completo</a></li>
+<li class="l3" data-t="totalmente acotado"><span class="tg sp"></span><a href="#s49" data-id="s49">Totalmente acotado</a></li>
+<li class="l3" data-t="lema: acotación total y sucesiones de cauchy"><span class="tg sp"></span><a href="#s50" data-id="s50">Lema: acotación total y sucesiones de Cauchy</a></li>
+<li class="l3" data-t="teorema fundamental de compacidad"><span class="tg sp"></span><a href="#s51" data-id="s51">Teorema fundamental de compacidad</a></li>
+<li class="l3" data-t="todo espacio totalmente acotado es separable"><span class="tg sp"></span><a href="#s52" data-id="s52">Todo espacio totalmente acotado es separable</a></li>
+<li class="l3" data-t="compacidad y cubrimientos abiertos"><span class="tg sp"></span><a href="#s53" data-id="s53">Compacidad y cubrimientos abiertos</a></li>
+<li class="l3 has" data-t="continuidad y continuidad uniforme"><button class="tg" aria-label="Plegar/desplegar" aria-expanded="true"></button><a href="#s54" data-id="s54">Continuidad y continuidad uniforme</a></li>
+<li class="l4" data-t="continuidad sobre dominios compactos"><span class="tg sp"></span><a href="#s55" data-id="s55">Continuidad sobre dominios compactos</a></li>
+<li class="l4" data-t="imagen continua de un compacto y extremos"><span class="tg sp"></span><a href="#s56" data-id="s56">Imagen continua de un compacto y extremos</a></li>
+<li class="l3" data-t="conexión"><span class="tg sp"></span><a href="#s57" data-id="s57">Conexión</a></li>
+<li class="l3 has" data-t="teorema de arzelà-ascoli"><button class="tg" aria-label="Plegar/desplegar" aria-expanded="true"></button><a href="#s58" data-id="s58">Teorema de Arzelà-Ascoli</a></li>
+<li class="l4" data-t="definiciones"><span class="tg sp"></span><a href="#s59" data-id="s59">Definiciones</a></li>
+<li class="l4" data-t="ejemplo: fₙ(x) = 1/(1+nx), con x ≥ 0"><span class="tg sp"></span><a href="#s60" data-id="s60">Ejemplo: fₙ(x) = 1/(1+nx), con x ≥ 0</a></li>
+<li class="l4" data-t="enunciado de arzelà-ascoli"><span class="tg sp"></span><a href="#s61" data-id="s61">Enunciado de Arzelà-Ascoli</a></li>
+<li class="l4" data-t="idea de la demostración"><span class="tg sp"></span><a href="#s62" data-id="s62">Idea de la demostración</a></li>
+<li class="l3" data-t="ejemplos de arzelà-ascoli"><span class="tg sp"></span><a href="#s63" data-id="s63">Ejemplos de Arzelà-Ascoli</a></li>
+<li class="l3" data-t="aplicación a ecuaciones diferenciales: existencia de solución local"><span class="tg sp"></span><a href="#s64" data-id="s64">Aplicación a ecuaciones diferenciales: existencia de solución local</a></li>
+<li class="l3" data-t="ejemplo final: existencia no implica unicidad"><span class="tg sp"></span><a href="#s65" data-id="s65">Ejemplo final: existencia no implica unicidad</a></li>
+<li class="l3" data-t="hilo conductor para el examen oral"><span class="tg sp"></span><a href="#s66" data-id="s66">Hilo conductor para el examen oral</a></li>
+ </ul></nav>
+</aside>
+<main><article id="doc">
+<h2 id="s0"><a class="anchor" href="#s0" aria-label="Enlace a la sección">#</a>1. ESPACIOS MÉTRICOS</h2>
+<h3 id="s1"><a class="anchor" href="#s1" aria-label="Enlace a la sección">#</a><strong>Espacio Métrico</strong></h3>
+<p>Un espacio métrico (X,d) es un conjunto X con una noción de distancia d (métrica) entre pares de elementos de X.</p>
+<p>Una métrica es una transformación d:XxX→<strong>ℝ</strong> tal que para cualesquiera dos elementos de X:</p>
+<ol type="1">
+<li><p>La distancia entre ellos es mayor o igual que 0</p>
+</li>
+<li><p>La distancia es nula ⟺ los elementos son el mismo</p>
+</li>
+<li><p>La distancia es simétrica</p>
+</li>
+<li><p>Cumple con la desigualdad triangular</p>
+</li>
+</ol>
+<h4 id="s2"><a class="anchor" href="#s2" aria-label="Enlace a la sección">#</a><strong>Subespacio métrico</strong></h4>
+<p>Si (X,d) es una espacio métrico, Y⊂X y d restringido en Y es una métrica para Y, entonces (Y,d) es un subespacio métrico de X.</p>
+<p>Ejemplos:</p>
+<ul>
+<li><p>La métrica discreta es métrica</p>
+</li>
+<li><p>|x-y|^a es métrica mientras 0 &lt; a &lt; 1</p>
+</li>
+<li><p>En X = <strong>ℝⁿ</strong>, la distancia dp(x,y)=(∑ᵢ₌₁ⁿ|xi-yi|^p)^1/p, dp mide qué tan diferentes son dos sucesiones/puntos/elementos elevadas a p y aplicando raíz para cuantificar qué tan separadas están.</p>
+</li>
+<li><p>En X = <strong>ℝⁿ</strong>, la distancia d∞(x,y)=max(1≤i≤n)|x-y|^p, d∞ toma la mayor diferencia.</p>
+</li>
+<li><p>X = ℓₚ , 1≤p≤∞, ℓₚ={(xn):(∑ᵢ₌₁∞|xi|^p&lt;∞} o sea, es el conjunto de las sucesiones infinitas tales que la suma de los valores absolutos elevados a p sea finito, o sea que converja.</p>
+</li>
+</ul>
+<p>Observaciones:</p>
+<ul>
+<li><p>La sucesión xₙ=(1/n) para n=1,2,... no converge en ℓ₁ pero si converge en ℓ₂.</p>
+</li>
+<li><p>1 &lt; p₁ &lt; p₂ entonces ℓₚ₁⊂ℓₚ₂ . Todo lo que está en ℓₚ₁ está en ℓₚ₂. ℓₚ₁ NO es un subespacio de ℓₚ₂ porque no estamos usando la misma métrica.</p>
+</li>
+</ul>
+<h4 id="s3"><a class="anchor" href="#s3" aria-label="Enlace a la sección">#</a><strong>Desigualdad de Holder</strong></h4>
+<p>Si p,q tales que 1 &lt; p,q &lt; ∞ y además 1/p+1/q=1. Sean x ∈ ℓₚ, y ∈ ℓq entonces el producto xy ∈ ℓ₁ y se cumple que ||x.y|| ≤ ||x||p.||y||q (nos da una cota para ese producto, el tamaño está acotado por el tamaño de x en p por el tamaño de y en q). En la demostración, queremos llegar a esa desigualdad, entonces construimos a partir de una función convexa que cumple con f(ax+by)≤a.f(x)+b.f(y) por definición de convexa. Aplicamos la exponencial, que es convexa y la manipulamos con las propiedades de la exponencial. Tomando valores para a,b,x,y llegamos a ||x.y|| ≤ ||x||p.||y||q</p>
+<p><strong>Desigualdad de Minkowski</strong></p>
+<p>La norma de la suma no puede ser mayor que la suma de las normas</p>
+<p><strong>Ejemplos</strong></p>
+<ul>
+<li><p>ℓ∞={(xn):sup(1≤i≤∞)|xi|&lt;∞} es el espacio de todas las sucesiones acotadas</p>
+</li>
+<li><p>d∞(x,y)=sup(1≤i≤∞)|xi-yi| es el supremo de las diferencias termino a termino.</p>
+</li>
+<li><p>X=C[a,b]={x:[a,b]→ℝ tal que x es continua} es el espacio de todas las <strong>funciones continuas</strong> en [a,b]</p>
+</li>
+<li><p>d∞(x,y)=sup(a≤t≤b)|x(t)-y(t)| es la máxima separación de ambas funciones evaluadas en cada punto del intervalo</p>
+</li>
+<li><p>d(x,y)=∫ₐᵇ|x(t)-y(t)|.dt o sea acumula todas las diferencias a lo largo del intervalo</p>
+</li>
+<li><p>Por qué d(x,y)=0 IMPLICA que x=y, porque la continuidad asegura que si en algun punto fuesen distintas, habría un entorno donde serían distintas entonces el area debajo de la curva es distinto de 0, sale por contradicción.</p>
+</li>
+<li><p>X=B[a,b] es el espacio de las <strong>funciones acotadas</strong> en el intervalo [a,b]</p>
+</li>
+<li><p>d∞(x,y)=sup(a≤t≤b)|x(t)-y(t)|</p>
+</li>
+<li><p>C[a.b]⊂B[a,b], en un intervalo cerrado, si una función es contínua no puede crecer sin límite por lo tanto resulta acotada.</p>
+</li>
+<li><p>X=Dn[a,b] es el espacio de funciones cuyas <strong>derivadas hasta orden n</strong> son continuas en [a,b]</p>
+</li>
+<li><p>X=BV[a,b] es el espacio de funciones de <strong>variación acotada</strong> en [a,b]. Una función de variación acotada es una función que no oscila infinitamente. Para cualquier partición, la variación total es finita.</p>
+</li>
+<li><p>La variación depende de la partición V[a,b](P,x)=∑ᵢ₌₁ⁿ|x(ti)-x(ti-1)|</p>
+</li>
+<li><p>La <strong>variación total</strong> V[a,b](x)=sup(P∈<strong>P</strong>)V[a,b](P,x)</p>
+</li>
+</ul>
+<p><strong>Discontinuidad</strong></p>
+<p>Corolario: Si x es monótona en [a,b], el conjunto de puntos donde es discontinua es numerable. Puede tener saltos, y si hay un salto siempre podemos elegir un número racional entonces a cada punto de discontinuidad le asignamos un número racional.</p>
+<h4 id="s4"><a class="anchor" href="#s4" aria-label="Enlace a la sección">#</a><strong>Lemas de Variación</strong></h4>
+<p><strong>Lema 1 de Variación</strong></p>
+<p>(Variación total) V[a,b]=V[a,c]+V[c,b]</p>
+<p>Sea P una partición de [a,b] elegimos un punto c intermedio, sea P una partición, P1 partición de [a,c] y P2 una partición de [c,b]. V[a,b] es la suma de las variaciones de los saltos para una partición cualquiera, o sea V[a,b](P,x) ≤ V[a,c](P1,x)+V[c,b](P2,x) porque <strong>al agregar c a la partición, uno de los saltos se divide en dos</strong>, y la suma de esos dos saltos es mayor o igual que el salto original (|x(xⱼ₊₁) − x(c)| + |x(c) − x(xⱼ)|), y por la desigualdad triangular, separamos los valores absolutos y dividimos esa mitad para una suma y la otra mitad para la otra suma. Y estas dos variaciones son ≤ que sus supremos, o sea que la suma de variaciones totales es mayor o igual que la variación total en [a,b].<br />
+Ahora del otro lado, tomamos una partición cualquiera P₁ de [a,c] y otra cualquiera P₂ de [c,b]. Como ambas contienen el punto c, podemos unirlas: P₁ ∪ P₂ es una partición de [a,b]. La suma de las variaciones en los dos intervalos es exactamente la variación correspondiente a esa partición de [a,b], es decir, Va,c + Vc,b = V[a,b](P₁ ∪ P₂,x). Y esta variación concreta es menor o igual que la variación total Va,b.<br />
+Por lo tanto sólo pueden ser iguales la variación total y la suma de las variaciones totales con un punto medio.</p>
+<p><strong>Lema 2 de Variación</strong></p>
+<p>V(x,t)=Vx(t)=V[a,t](x)</p>
+<p>Vx (la variación de la función x hasta t) es mayor o igual a 0, es siempre creciente y la diferencia entre dos puntos de la función es siempre menor o igual a la variación.</p>
+<p><strong>Lema 3 de Variación</strong></p>
+<p>La función Vx - x es una función creciente</p>
+<p><strong>Teorema:</strong> Una función es de variación acotada (∈BV) ⟺ existen x,y,z monótonas crecientes tales que x = y-z. O sea, una función es BV si puede escribirse como diferencia de funciones acotadas. La vuelta es trivial porque las funciones monótonas son de variación acotada en un intervalo [a,b]. La ida x=Vx - (Vx - x) y ahí tengo mis dos funciones monótonas crecientes.</p>
+<h3 id="s5"><a class="anchor" href="#s5" aria-label="Enlace a la sección">#</a><strong>Métrica para una familia de conjuntos</strong></h3>
+<p>Definimos el conjunto M={E⊂<strong>ℝ²</strong>, E es convexo, compacto y no vacío}.</p>
+<p>Un conjunto A es <strong>convexo</strong> si, dados dos puntos cualesquiera de A, todo el segmento que los une también está contenido en A. O sea, λx+(1-λ)y∈A para todo x,y∈A , 0≤λ≤1</p>
+<p>Un conjunto A es <strong>compacto</strong> si es cerrado y acotado.</p>
+<p><strong>Ejemplos:</strong></p>
+<ul>
+<li><p>A=∅ es convexo por definición, pero no pertenece a M</p>
+</li>
+<li><p>A={x} sí pertenece a M. Es convexo, compacto y no vacío.</p>
+</li>
+<li><p><strong>ℝ²</strong> no pertenece a M porque no es compacto.</p>
+</li>
+<li><p>Una bola abierta B(x,r): no pertenece a M porque no es compacta.</p>
+</li>
+<li><p>Una bola cerrada B(x,r): sí pertenece a M, porque es convexa, compacta y no vacía.</p>
+</li>
+</ul>
+<h4 id="s6"><a class="anchor" href="#s6" aria-label="Enlace a la sección">#</a><strong>Dilatado</strong></h4>
+<p>El dilatado Aδ de un conjunto A es, graficamente, agrandar A una distancia δ en todas las direcciones. Por ejemplo, si A={x}, su dilatado es la bola cerrada de radio δ alrededor de x. Se define el dilatado de A como: Aδ = ⋃x∈A B̅(x, δ)</p>
+<p>d(A, B) = ínf {δ ∶ A ⊂ Bδ ∧ B ⊂ Aδ} La distancia d(A,B) mide cuánto hay que dilatar A y B para que cada uno quede contenido dentro del dilatado del otro. Esto es diferente de la distancia usual entre conjuntos que toma el ínfimo de las distancias entre puntos de ambos conjuntos; esa otra distancia no es una métrica.</p>
+<p><strong>¿Por qué es una métrica?</strong> 1) No negatividad: Es inmediato porque d(A,B) está definido como un ínfimo de valores δ&gt;0, por lo tanto, el ínfimo es no negativo. 2) d(A,B)=0⟺A=B. Si d(A,B)=0, sea x∈A. Como la distancia es cero, para cada n podemos encontrar un yₙ∈B tal que d(yₙ,x)≤1/n. Entonces yₙ→x. Como B es cerrado, x∈B. Por lo tanto A⊂B. Haciendo exactamente el mismo razonamiento intercambiando A y B, obtenemos B⊂A. Por lo tanto, A=B. 3) Simetría: d(A,B)=d(B,A). Esto sale directamente de la definición porque para calcular d(A,B) exigimos simultáneamente: A⊂Bδ ​y B⊂Aδ​. 4) Desigualdad triangular: d(A,B)≤d(A,C)+d(C,B). La idea es: si para algún s tenemos que A está dentro del s-dilatado de C, y para algún t tenemos que C está dentro del t-dilatado de B, entonces A queda dentro del (s+t)-dilatado de B. Lo mismo ocurre en sentido contrario. Por eso:</p>
+<p>s+t∈Gsub(A,B)={δ&gt;0: A⊂Bδ​ y B⊂Aδ​}. Entonces, el menor valor posible para A,B no puede ser mayor que la suma de los menores valores para A,C y C,B: d(A,B)≤d(A,C)+d(C,B). Y con estas cuatro propiedades queda demostrado que <strong>d es una métrica en M</strong>.</p>
+<h3 id="s7"><a class="anchor" href="#s7" aria-label="Enlace a la sección">#</a><strong>Espacios separables</strong></h3>
+<p>(M,d) es separable⟺∃D={xn​}⊂M:D¯=M. o sea, un espacio es separable si podemos encontrar un conjunto numerable de puntos que sea denso en todo el espacio.</p>
+<p>Ejemplos:1) (<strong>ℝ</strong>,| |) es separable porque Q̅ = <strong>ℝ</strong>. 2) (<strong>ℝ</strong>, dp) es separable porque Q̅ = <strong>ℝ</strong>. 3) (<strong>ℝ</strong>, discreta) no es separable porque si ε &lt; 1, no se cumple para los irracionales.</p>
+<p>Demostración <strong>lₚ</strong> es separable.</p>
+<p>M = ℓₚ, 1 ≤ p &lt; ∞. ℓₚ = {x = (xn) ∶ <strong>∑ᵢ₌₁∞</strong> |xi|^p &lt; ∞}</p>
+<p>Demostración: ℓₚ <strong>es separable</strong>, tomamos como conjunto D el conjunto de sucesiones de racionales que tienen una cantidad finita de elementos no nulos, o sea, sucesiones de la forma q = (q₁, …, qₙ, 0, 0, …). Dada cualquier sucesión x = (xₙ) ∈ ℓₚ y cualquier ε &gt; 0, como la serie ∑ |xᵢ|ᵖ converge, podemos elegir N suficientemente grande para que la cola ∑ᵢ₌ₙ₊₁∞ |xᵢ|ᵖ &lt; εᵖ/2. Luego, como los racionales son densos en los reales, podemos elegir racionales q₁, …, qₙ suficientemente cercanos a x₁, …, xₙ, de manera que ∑ᵢ₌₁ⁿ |xᵢ − qᵢ|ᵖ &lt; εᵖ/2. Entonces, tomando q = (q₁, …, qₙ, 0, 0, …), obtenemos dₚ(x,q) &lt; ε. Por lo tanto, podemos aproximar cualquier elemento de lₚ tanto como queramos mediante elementos de D, así que D es denso en ℓₚ. Finalmente, D es numerable porque podemos establecer una biyección entre D y ⋃ₙ₌₁∞ ℚⁿ, que es numerable. Por lo tanto, lₚ es separable.</p>
+<p>Demostración: <strong>ℓ∞{x = (xn) ∶ sup |xn| &lt; ∞} no es separable</strong>. Veremos que si existe un denso D, no puede ser numerable. Se considera el conjunto N formado por todas las sucesiones cuyos términos son solamente 0 o 1. Este conjunto no es numerable, porque cada sucesión de ceros y unos puede identificarse con un número de [0,1] escrito en base 2. Ahora suponemos que D es un conjunto denso en ℓ∞. Como D es denso, para cada x ∈ N podemos elegir un elemento dₓ ∈ D tal que d(x,dₓ) &lt; 1/3. Si tomamos dos sucesiones distintas x, y ∈ N, como difieren en al menos una coordenada, su distancia en ℓ∞ es d(x,y) = 1. Entonces, por la desigualdad triangular, d(x,y) &lt; d(x,dₓ) + d(dₓ,dᵧ) + d(dᵧ,y) &lt; 2/3 + d(dₓ,dᵧ). Como d(x,y) = 1, necesariamente d(dₓ,dᵧ) &gt; 1/3. Por lo tanto, dₓ ≠ dᵧ: a elementos distintos de N les corresponden elementos distintos de D. Esto significa que D contiene al menos tantos elementos como N y, como N no es numerable, D tampoco puede ser numerable. Por lo tanto, ℓ∞ no es separable.</p>
+<p><strong>Ejemplo:</strong> Demostremos que <strong>(C[a,b], d∞) es separable</strong>. Para eso usamos el teorema de Weierstrass, que dice que toda función continua en el intervalo cerrado [a,b] puede aproximarse uniformemente por polinomios. Por lo tanto, los polinomios son densos en C[a,b]. Ahora demostremos que los polinomios con coeficientes racionales son densos en los polinomios: dado un polinomio P(t) = a₀ + a₁t + ... + aₙtⁿ y un ε &gt; 0, como los racionales son densos en los reales, podemos aproximar cada coeficiente aᵢ por un racional αᵢ tan cerca como queramos. En particular, elijo αᵢ de manera que |aᵢ − αᵢ| &lt; ε/(n+1). Así obtenemos el polinomio Pʳ(t) = α₀ + α₁t + ... + αₙtⁿ. Calculamos la distancia d∞(P,Pʳ), que es el máximo de |P(t) − Pʳ(t)| en [0,1]. Al restar los polinomios y aplicar la desigualdad triangular, obtenemos |P(t) − Pʳ(t)| ≤ ∑ᵢ₌₀ⁿ |aᵢ − αᵢ|tⁱ. Como t está entre 0 y 1, tenemos tⁱ ≤ 1, por lo que cada término es menor o igual que |aᵢ − αᵢ|. Entonces la suma es menor que (n+1)·ε/(n+1) = ε. Por lo tanto, d∞(P,Pʳ) &lt; ε, o sea, podemos aproximar cualquier polinomio tanto como queramos mediante polinomios con coeficientes racionales. Por lo tanto, los polinomios con coeficientes racionales son densos en C[a,b]. Finalmente, esta familia es numerable, porque para cada grado n un polinomio queda determinado por una cantidad finita de números racionales, y la unión numerable de conjuntos numerables sigue siendo numerable. Entonces tenemos un conjunto numerable y denso en C[a,b], y por definición concluimos que <strong>(C[a,b], d∞) es separable</strong>.</p>
+<h3 id="s8"><a class="anchor" href="#s8" aria-label="Enlace a la sección">#</a><strong>Polinomio de Bernstein</strong></h3>
+<p>Para una función f definida en [0,1], el polinomio de Bernstein de grado n se define como Bₙ(x,f) = ∑ₖ₌₀ⁿ f(k/n) · (n comb k) · xᵏ · (1−x)ⁿ⁻ᵏ. La idea es construir, a partir de los valores de f en los puntos k/n, un polinomio que aproxime a f.<br />
+Observaciones: Primero tomamos f(x) = 1, y obtenemos Bₙ(x,f) = 1, usando la fórmula del binomio de Newton; o sea, para una función constante, el polinomio de Bernstein coincide exactamente con la función. Luego con f(x) = x y ocurre lo mismo: Bₙ(x,f) = x. Finalmente tomo f(x) = x² y calculo Bₙ(x,f) = x² − x²/n + x/n. Por lo tanto, la diferencia con x² es |Bₙ(x,f) − x²| = |x(1−x)|/n, que es menor que 1/n. Esto muestra que, en este caso, a medida que n aumenta, el polinomio de Bernstein se acerca cada vez más a x².</p>
+<h4 id="s9"><a class="anchor" href="#s9" aria-label="Enlace a la sección">#</a><strong>Teorema de Aproximación de Bernstein</strong></h4>
+<p>Toda función continua en [0,1] es límite uniforme de los correspondientes polinomios de Bernstein. O sea, si f es continua en [0,1], los polinomios Bₙ construidos a partir de f se van acercando cada vez más a f y, dado cualquier ε &gt; 0, podemos encontrar un n suficientemente grande para que |f(x) − Bₙ(x)| &lt; ε para todo x del intervalo al mismo tiempo.</p>
+<p><strong>Demostración</strong>: El PDF empieza estudiando |f(x) − Bₙ(x)|. Como f es continua en el intervalo cerrado [0,1], sabemos que está acotada y que es uniformemente continua (por ser continua en un compacto). Entonces, dado ε &gt; 0, elegimos δ &gt; 0 para que, cuando |x − k/n| &lt; δ, se cumpla |f(x) − f(k/n)| &lt; ε/2. Después se separa la suma en dos partes: una donde |x − k/n| &lt; δ y otra donde |x − k/n| &gt; δ. Básicamente, en la primera parte usamos la continuidad y obtenemos algo menor que ε/2. En la segunda, como f está acotada, tomamos |f| ≤ M, así que |f(x) − f(k/n)| ≤ 2M. Como en esa parte |x − k/n| &gt; δ, podemos meter el factor (x − k/n)²/δ² y transformar la suma en una expresión que ya podemos calcular. Usando los cálculos anteriores del PDF, esa parte queda acotada por M/(2δ²n), que podemos hacer menor que ε/2 tomando n suficientemente grande. Entonces las dos partes juntas son menores que ε, y obtenemos |f(x) − Bₙ(x)| &lt; ε para todo x ∈ [0,1]. Por lo tanto, Bₙ converge uniformemente a f.</p>
+<h4 id="s10"><a class="anchor" href="#s10" aria-label="Enlace a la sección">#</a><strong>Teorema de aproximación de Weierstrass</strong></h4>
+<p>Sea f: [a,b] → ℝ una función continua. Entonces f se puede aproximar uniformemente por polinomios.</p>
+<p>La <strong>demostración</strong> usa el resultado de Bernstein que acabamos de ver, pero ahora en un intervalo general [a,b]. Primero hacen un cambio lineal para llevar [a,b] al intervalo [0,1]. Toman la recta que une (0,a) con (1,b), que da y − a = (b − a)x, y con eso definen g(x) = f[a + (b − a)x]. Así, g es una función continua en [0,1], por lo que, por el teorema de Bernstein, se puede aproximar uniformemente por polinomios. Después vuelven al intervalo original [a,b], y esos polinomios dan una aproximación uniforme de f.</p>
+<h3 id="s11"><a class="anchor" href="#s11" aria-label="Enlace a la sección">#</a><strong>Base de una Topología τ</strong></h3>
+<p>Un conjunto B es una base de τ si cumple dos cosas: primero, <strong>B está contenido en τ</strong> (y como τ es una topología, sus conjuntos son abiertos, entonces los elementos de B son abiertos); y segundo, <strong>todo abierto de τ se puede escribir como unión de elementos de B</strong>, o sea, existe una familia de elementos {Bλ} ⊂ B tal que <strong>O = ⋃ Bλ</strong> (o dicho de otra forma: para todo abierto O y todo punto x ∈ O, existe un elemento B ∈ B tal que <strong>x ∈ B ⊂ O</strong>)</p>
+<h4 id="s12"><a class="anchor" href="#s12" aria-label="Enlace a la sección">#</a>Perfectamente separable</h4>
+<p><strong>Definición: (T, τ) es perfectamente separable</strong> si existe una base de τ que sea numerable. o sea, podemos encontrar una colección de abiertos B = {Oₙ, n ∈ ℕ} que sea una base de la topología. O sea, toda la topología se puede generar usando una cantidad numerable de abiertos.</p>
+<p><strong>Ejemplo 1: (ℝ, | |) es perfectamente separable.</strong> Tomamos como base los intervalos abiertos con extremos racionales: B = {(p₁,p₂) : p₁ &lt; p₂ y p₁,p₂ ∈ ℚ}. Como ℚ es numerable, B también lo es, y todo intervalo abierto puede escribirse como unión de intervalos de B. Por lo tanto, (ℝ, | |) es perfectamente separable.</p>
+<p><strong>Ejemplo 2: (ℝⁿ, d₂) es perfectamente separable.</strong> Tomamos como base las bolas abiertas con centro en ℚⁿ y radio racional positivo: B = {B(x,r) : x ∈ ℚⁿ, r ∈ ℚ⁺}. Como ℚⁿ y ℚ⁺ son numerables, B es numerable, y estas bolas forman una base de la topología de ℝⁿ. Por lo tanto, (ℝⁿ, d₂) es perfectamente separable.<br />
+<strong>Teorema: (T, τ) es perfectamente separable ⇒ (T, τ) es separable.</strong> Acá T es el conjunto sobre el cual está definida la topología τ. Si (T, τ) es perfectamente separable, sabemos que existe una base numerable B = {Bₙ}. Elegimos un punto xₙ dentro de cada Bₙ y formamos D = {xₙ}, por lo que D ⊂ T y D es numerable. Ahora queremos demostrar que D es denso en T, o sea, que D̄ = T. Para eso suponemos que existe un punto x ∈ T que no pertenece a D̄. Entonces el complemento de D̄ es abierto y, como B es una base, existe algún Bₙ tal que <strong>x</strong> ∈ Bₙ ⊂ complemento de D̄. Pero por construcción <strong>xₙ</strong> ∈ Bₙ, así que <strong>xₙ</strong> ∉ D̄; sin embargo, xₙ ∈ D (por definición: D = {xₙ}) y todo elemento de D pertenece a D̄, lo que es una contradicción. Por lo tanto, D̄ = T, así que D es un conjunto numerable y denso en T; por definición, (T, τ) es separable.<br />
+<strong>Contraejemplo: (T, τ) separable ⇏ (T, τ) perfectamente separable.</strong> La idea es construir un espacio que sea separable, pero que no tenga una base numerable. Para eso se toma T como un conjunto no numerable y se define τ = {∅} ∪ {A ⊂ T : T − A es finito}. Primero queremos probar que este espacio es separable, o sea, que existe un conjunto numerable y denso. Tomamos cualquier conjunto infinito B ⊂ T y queremos demostrar que B es denso, o sea, que B̄ = T. Para eso tomamos un punto cualquiera x ∈ T y queremos ver que x ∈ B̄. Por la definición de clausura, esto significa que todo abierto O que contiene a x tiene que intersectar a B. Si existiera un abierto O que contiene a x pero no intersecta a B, entonces B ⊂ T − O; pero como O es abierto, T − O es finito, así que B tendría que ser finito, contradicción. Por lo tanto, B es denso y, como podemos elegir B infinito y numerable, (T, τ) es separable. Ahora queremos demostrar que no es perfectamente separable. Suponemos, por contradicción, que existe una base numerable {Oₙ}. Fijamos un punto x ∈ T y llamamos Oₓ al conjunto de todos los abiertos que contienen a x. Para cualquier y ≠ x, el conjunto T − {y} es un abierto que contiene a x pero no contiene a y, así que la intersección de todos los abiertos que contienen a x es exactamente {x}. Como {Oₙ} es una base, podemos reemplazar esa colección de todos los abiertos por los elementos de la base que contienen a x, y seguimos teniendo {x} como intersección. Al tomar complementos, obtenemos T − {x} como una unión numerable de conjuntos T − Oₙ. Cada Oₙ es abierto, así que cada T − Oₙ es finito. Entonces T − {x} es una unión numerable de conjuntos finitos y, por lo tanto, es numerable. Como además {x} tiene un solo elemento, T también sería numerable, pero habíamos elegido T no numerable. Llegamos a una contradicción. Por eso, (T, τ) es separable pero no perfectamente separable.<br />
+<strong>Proposición: Sea (M, d) espacio métrico. Entonces: M es perfectamente separable ⇔ M es separable.</strong> La demostración tiene dos direcciones. La primera, <strong>perfectamente separable ⇒ separable</strong>, ya la vimos: si hay una base numerable, elegimos un punto de cada elemento de la base y obtenemos un conjunto numerable y denso. Para la otra dirección, suponemos que <strong>M es separable</strong>, así que existe un conjunto numerable y denso D = {xₙ}, es decir, D̄ = M. Queremos construir con esos puntos una <strong>base numerable</strong>. Tomamos B = {B(xₙ,r) : xₙ ∈ D y r ∈ ℚ⁺}. Esta colección es numerable porque usamos un conjunto numerable de centros y radios racionales. Ahora hay que demostrar que B es una base. Tomamos cualquier abierto O y cualquier punto x ∈ O. Como O es abierto, existe ε &gt; 0 tal que B(x,ε) ⊂ O. Como D es denso, podemos encontrar un xₙ ∈ D dentro de B(x,ε/2). Después elegimos un radio racional r que cumpla d(xₙ,x) &lt; r &lt; ε/2. Con esta elección, el PDF demuestra dos cosas: x ∈ B(xₙ,r) y B(xₙ,r) ⊂ B(x,ε) ⊂ O. Entonces encontramos una bola de nuestra colección B que contiene a x y está completamente dentro de O. Por lo tanto, B es una base numerable y M es perfectamente separable.<br />
+<strong>Corolario:</strong> i) C[a,b] es perfectamente separable; ii) ℓ∞ no es perfectamente separable. Esto sale directamente del resultado anterior.</p>
+<h4 id="s13"><a class="anchor" href="#s13" aria-label="Enlace a la sección">#</a>Cubrimiento</h4>
+<p><strong>Cubrimiento por abiertos:</strong> Sea (T, τ) un espacio topológico, A ⊂ T y C ⊂ τ. Decimos que C es un cubrimiento por abiertos de A si todos los puntos de A están cubiertos por los conjuntos de C, es decir, A ⊂ ⋃ C<br />
+<strong>Teorema de Lindelöf:</strong> Si (T, τ) es perfectamente separable, entonces <strong>todo cubrimiento por abiertos de cualquier conjunto A ⊂ T tiene un subcubrimiento numerable</strong>. O sea, aunque para cubrir A necesitemos inicialmente muchísimos abiertos, siempre podemos elegir una cantidad numerable de ellos que siga cubriendo todo A.</p>
+<h2 id="s14"><a class="anchor" href="#s14" aria-label="Enlace a la sección">#</a>2. ESPACIOS COMPLETOS</h2>
+<h3 id="s15"><a class="anchor" href="#s15" aria-label="Enlace a la sección">#</a><strong>Sucesiones de Cauchy</h3>
+<p class="from-h"></strong>Una sucesión (xₙ) en un espacio métrico (M,d) se llama <strong>sucesión de Cauchy</strong> si sus términos se van acercando entre sí todo lo que queramos. Definición: ∀ε &gt; 0, ∃N tal que ∀m,n ≥ N, d(xₙ,xₘ) &lt; ε. Otra forma equivalente: lim d(xₙ₊ₖ,xₙ) = 0 cuando n → ∞, uniformemente en k.</p>
+<h4 id="s16"><a class="anchor" href="#s16" aria-label="Enlace a la sección">#</a><strong>Lema: Toda sucesión convergente es de Cauchy</h4>
+<p class="from-h"></strong>La razón es que, si todos los términos están cada vez más cerca de x, entonces también tienen que estar cada vez más cerca entre sí. Esto vale en cualquier espacio métrico.</p>
+<h4 id="s17"><a class="anchor" href="#s17" aria-label="Enlace a la sección">#</a><strong>No toda sucesión de Cauchy converge</h4>
+<p class="from-h"></strong>ℚ: podemos tomar una sucesión de números racionales que se acerque a un número irracional, por ejemplo √2, la sucesión es: <span class="eq">x<sub>n+1</sub> = <span class="frac"><i>1</i><i>2</i></span><span class="big">(</span> x<sub>n</sub> + <span class="frac"><i>2</i><i>x<sub>n</sub></i></span><span class="big">)</span></span>. Esa sucesión es de Cauchy porque sus términos se acercan entre sí, pero no converge dentro de ℚ porque √2 no pertenece a ℚ. Esto muestra que el problema no está necesariamente en la sucesión, sino en que <strong>el espacio puede no contener el límite</strong>.</p>
+<h3 id="s18"><a class="anchor" href="#s18" aria-label="Enlace a la sección">#</a><strong>Espacio completo</h3>
+<p class="from-h"></strong>Un espacio métrico (M,d) se dice <strong>completo</strong> si toda sucesión de Cauchy converge a un elemento de M. O sea, completo significa que el espacio no tiene “agujeros” respecto de las sucesiones de Cauchy. ℚ no es completo y ℝ sí lo es. </p>
+<h3 id="s19"><a class="anchor" href="#s19" aria-label="Enlace a la sección">#</a><strong>Si una subsucesión de Cauchy converge, converge toda la sucesión</h3>
+<p class="from-h"></strong>(xₙ) es de Cauchy y alguna subsucesión (xₙₖ) converge a x, entonces la sucesión completa (xₙ) también converge a x. La idea es que, como la sucesión es de Cauchy, todos los términos a partir de un N están cerca de cualquier término suficientemente avanzado de la subsucesión; y como esa subsucesión se acerca a x, toda la sucesión termina acercándose a x.</p>
+<h3 id="s20"><a class="anchor" href="#s20" aria-label="Enlace a la sección">#</a><strong>Caracterización mediante bolas cerradas encajadas</h3>
+<p class="from-h"></strong>Un espacio es completo si y solo si, para toda familia de bolas cerradas B̄ₙ que sean decrecientes, es decir, B̄ₙ₊₁ ⊂ B̄ₙ, y cuyos radios cumplen rₙ → 0, existe un único punto x₀ tal que {x₀} = ⋂ B̄ₙ. La idea es que tenemos bolas cada vez más pequeñas y metidas unas dentro de otras, y en un espacio completo todas terminan concentrándose en un único punto.<br />
+Para la dirección “completo ⇒ propiedad de las bolas”, tomamos el centro xₙ de cada bola B̄ₙ. Como las bolas son decrecientes, B̄ₙ₊₁ ⊂ B̄ₙ, y como xₙ₊₁ es el centro de B̄ₙ₊₁, se tiene xₙ₊₁ ∈ B̄ₙ. Lo mismo ocurre con cualquier centro posterior, es decir, xₙ₊ₖ ∈ B̄ₙ. Por lo tanto, como xₙ es el centro de B̄ₙ y su radio es rₙ, tenemos d(xₙ₊ₖ,xₙ) ≤ rₙ. Como rₙ → 0, dado cualquier ε &gt; 0 podemos elegir N suficientemente grande para que rₙ &lt; ε para todo n ≥ N. Entonces, para m,n ≥ N, d(xₘ,xₙ) &lt; ε. Por lo que (xₙ) es de Cauchy. Al ser M completo, xₙ → x₀. Como las bolas son cerradas, x₀ pertenece a todas ellas. Después se demuestra la unicidad usando la desigualdad triangular: si x₀ y x₀′ estuvieran en todas las bolas, entonces d(x₀,x₀′) &lt; 2rₙ, y como rₙ → 0, necesariamente d(x₀,x₀′)=0.<br />
+Para la dirección contraria, partimos de una sucesión de Cauchy (xₙ). Como es de Cauchy, podemos elegir una sucesión de índices Nₖ, cada vez más grandes, de manera que para todo n ≥ Nₖ se cumpla d(xₙ, x₍Nₖ₎) &lt; 1/2ᵏ. Ahora definimos las bolas cerradas B̄ₖ = B̄(x₍Nₖ₎, 1/2ᵏ⁻¹). Estas bolas son decrecientes y sus radios tienden a 0. Entonces, por la propiedad de las bolas, existe un único x₀ perteneciente a todas ellas, es decir, x₀ ∈ ⋂B̄ₖ. Como x₍Nₖ₎ pertenece a B̄ₖ, tenemos d(x₀, x₍Nₖ₎) ≤ 1/2ᵏ⁻¹, y como 1/2ᵏ⁻¹ → 0, resulta que x₍Nₖ₎ → x₀. Es decir, encontramos una subsucesión de (xₙ) que converge a x₀. Como (xₙ) es de Cauchy, por el lema anterior, si una subsucesión converge a x₀, entonces toda la sucesión converge a x₀. Por lo tanto, toda sucesión de Cauchy de M converge en M, y concluimos que M es completo. </p>
+<h3 id="s21"><a class="anchor" href="#s21" aria-label="Enlace a la sección">#</a><strong>Ejemplo: (C[a,b], d∞) es completo</h3>
+<p class="from-h"></strong>Consideramos C[a,b], con d∞(x,y) = supₐ≤ₜ≤ᵦ |x(t)−y(t)|. Si (xₙ) es de Cauchy respecto de d∞, entonces para cada t fijo, la sucesión de números reales (xₙ(t)) es de Cauchy en ℝ y por lo tanto converge a algún x(t). Así definimos una función x. Además, de la condición de Cauchy obtenemos que supₐ≤ₜ≤ᵦ |xₙ(t)−x(t)| → 0, es decir, xₙ converge uniformemente a x. Como cada xₙ es continua y el límite uniforme de funciones continuas es continuo, x pertenece a C[a,b]. Entonces la sucesión converge dentro del propio espacio y por eso (C[a,b],d∞) es completo.<br />
+La idea para recordar oralmente es: <strong>Cauchy en d∞ ⇒ converge punto a punto ⇒ además converge uniformemente ⇒ el límite sigue siendo continuo ⇒ el espacio es completo.</strong></p>
+<h3 id="s22"><a class="anchor" href="#s22" aria-label="Enlace a la sección">#</a><strong>Ejemplo: (C[0,1], d) con la distancia integral NO es completo</h3>
+<p class="from-h"></strong>d(x,y) = ∫₀¹ |x(t)−y(t)|dt. Se construye una sucesión de funciones continuas xₙ que aproxima cada vez mejor una función escalón: vale aproximadamente 0 antes de c y 1 a partir de c, pero el salto se hace cada vez más estrecho. La sucesión es de Cauchy para esta distancia integral. El problema aparece al buscar su límite. La distancia integral obliga al límite a ser x(t)=0 para t&lt;c y x(t)=1 para c≤t≤1. Esa función tiene un salto en c, así que no es continua. Por lo tanto, la sucesión es de Cauchy pero no converge a ningún elemento de C[0,1]. Concluimos que (C[0,1],d) <strong>no es completo</strong>.<br />
+Esto es importante porque muestra que <strong>el mismo conjunto de funciones puede ser completo con una distancia y no serlo con otra</strong>.<br />
+<br />
+<strong>¿Podemos solucionar el problema ampliando el espacio?<br />
+</strong>El PDF plantea entonces si podemos ampliar C[a,b] para incluir esos límites. Aparece otro problema: con la distancia integral, d(x,y)=0 no necesariamente implica x=y como funciones. Por ejemplo, dos funciones pueden diferir únicamente en un punto y aun así tener distancia 0, porque modificar una función en un solo punto no cambia la integral. Por eso se introduce una relación de equivalencia: x ℛ y ⇔ ∫ₐᵇ |x(t)−y(t)|dt = 0. Así se consideran iguales todas las funciones que tienen distancia 0 entre sí. O sea, sí, podemos ampliar el espacio y además tenemos que identificar las funciones que están a distancia 0. Pero eso no alcanza para hacerlo completo; el PDF muestra que el problema viene de la distancia definida con la integral de Riemann, y por eso se pasa a la integral de Lebesgue más adelante..<br />
+<strong>Ejemplo 3: otra sucesión de Cauchy que no tiene límite en el espacio<br />
+</strong>El PDF presenta después otra sucesión xn(t) = {√n si 0 ≤ t ≤ 1/n ; 1/√t si n≤ t ≤ 1} o sea constante hasta 1/n y luego la hipérbola, que esencialmente se aproxima a la función x(t)=1/√t para t&gt;0. La sucesión es de Cauchy para la distancia integral, pero el posible límite x(t)=1/√t no pertenece al espacio de funciones acotadas porque se hace infinito cuando t→0. Por lo tanto, tenemos una sucesión de Cauchy cuyo límite queda fuera del espacio.<br />
+Uno podría intentar ampliar aún más el espacio incluyendo funciones cuya integral impropia exista, pero en el siguiente ejemplo muestra que el problema es más profundo.<br />
+<strong>Ejemplo 4: aparece un problema todavía más profundo<br />
+</strong>Se construye una sucesión de conjuntos Sₙ dentro de [0,1], eliminando repetidamente intervalos centrales. Luego se define xₙ(t)=1 si t∈Sₙ y xₙ(t)=0 si t∉Sₙ. Se demuestra que (xₙ) es de Cauchy respecto de la distancia integral. Sin embargo, el posible límite no puede ser una función integrable de Riemann que resuelva el problema.<br />
+La conclusión: <strong>el problema de completitud de este espacio no se soluciona simplemente agregando algunas funciones; el problema está en la distancia basada en la integral de Riemann</strong>. Por eso se menciona la integral de Lebesgue como la herramienta adecuada para construir el espacio correspondiente.</p>
+<h3 id="s23"><a class="anchor" href="#s23" aria-label="Enlace a la sección">#</a><strong>Los espacios ℓᵖ, 1 ≤ p &lt; ∞, son completos</h3>
+<p class="from-h"></strong>Sea (x⁽ⁿ⁾) una sucesión de Cauchy en ℓᵖ. Como la distancia en ℓᵖ está dada por d(x,y) = (Σᵢ₌₁∞ |xᵢ−yᵢ|ᵖ)¹ᐟᵖ, la condición de Cauchy implica que para cada coordenada i, (xᵢ⁽ⁿ⁾) es una sucesión de Cauchy de números reales. Como ℝ es completo, cada coordenada converge: xᵢ = limₙ→∞ xᵢ⁽ⁿ⁾. Así se construye x=(x₁,x₂,…).<br />
+Después hay que demostrar dos cosas: primero, que x pertenece realmente a ℓᵖ, es decir, que Σ|xᵢ|ᵖ &lt; ∞; y segundo, que x⁽ⁿ⁾ converge a x en la distancia de ℓᵖ. Para eso se considera primero una suma finita de k términos, se toma límite y luego se hace k→∞. El PDF obtiene que (Σᵢ₌₁∞ |xᵢ|ᵖ)¹ᐟᵖ &lt; ∞, por lo que x∈ℓᵖ. Finalmente se obtiene d(x⁽ⁿ⁾,x)&lt;ε para n suficientemente grande. Entonces ℓᵖ es completo para todo 1≤p&lt;∞.</p>
+<h3 id="s24"><a class="anchor" href="#s24" aria-label="Enlace a la sección">#</a><strong>ℓ∞ también es completo</h3>
+<p class="from-h"></strong>En ℓ∞ la distancia es d∞(x,y)=supᵢ∈ℕ |xᵢ−yᵢ|. Si (x⁽ⁿ⁾) es de Cauchy, entonces para cada coordenada i, (xᵢ⁽ⁿ⁾) es de Cauchy en ℝ y por lo tanto converge a xᵢ. Definimos x=(x₁,x₂,…).<br />
+Ahora hay que demostrar que x es acotada (porque ℓ∞ = {x = (xᵢ) : supᵢ∈ℕ |xᵢ| &lt; ∞}). Para eso, usamos |xᵢ| ≤ |xᵢ−xᵢ⁽ᴺ⁾| + |xᵢ⁽ᴺ⁾| &lt; ε + supᵢ∈ℕ |xᵢ⁽ᴺ⁾|. Como x⁽ᴺ⁾ pertenece a ℓ∞, el segundo término es finito, y por tanto supᵢ |xᵢ| &lt; ∞. Así x∈ℓ∞. Finalmente, la condición de Cauchy permite demostrar que supᵢ |xᵢ⁽ⁿ⁾−xᵢ| &lt; ε para n suficientemente grande, por lo que x⁽ⁿ⁾→x en ℓ∞. Por lo tanto, ℓ∞ es completo.</p>
+<h3 id="s25"><a class="anchor" href="#s25" aria-label="Enlace a la sección">#</a><strong>Teorema del subespacio cerrado</h3>
+<p class="from-h">Un subespacio de un espacio métrico completo es completo si y sólo si es cerrado</strong>. La idea es que un subconjunto cerrado contiene los límites de las sucesiones que permanecen dentro de él. Por eso, si el espacio grande es completo y tenemos una sucesión de Cauchy dentro de un subespacio cerrado, la sucesión converge en el espacio grande y, por ser cerrado el subespacio, el límite sigue perteneciendo al subespacio.<br />
+<br />
+<strong>Contracciones<br />
+</strong>Una transformación T:X→X es una <strong>contracción</strong> si existe una constante k con 0&lt;k&lt;1 tal que d(Tx,Ty) ≤ k d(x,y) para todos x,y∈X, x≠y. Es decir, T reduce las distancias al menos por un factor k. Un <strong>punto fijo</strong> de T es un punto x₀ que satisface x₀=T(x₀).</p>
+<h3 id="s26"><a class="anchor" href="#s26" aria-label="Enlace a la sección">#</a><strong>Teorema del punto fijo de Banach</h3>
+<p class="from-h"></strong>El teorema dice: <strong>si X es un espacio métrico completo y T es una contracción en X, entonces T tiene un único punto fijo</strong>. Para la unicidad, si x=Tx e y=Ty, entonces d(x,y)=d(Tx,Ty)≤k d(x,y)&lt;d(x,y), lo cual solo es posible si d(x,y)=0; por lo tanto x=y.<br />
+Para demostrar la existencia, el PDF empieza con cualquier x₀∈X y define iterativamente x₁=Tx₀, x₂=Tx₁, …, xₙ=Tⁿx₀. La contracción hace que las distancias entre términos sucesivos disminuyan como potencias de k. Se obtiene una cota del tipo d(xₙ,xₙ₊ₚ) &lt; kⁿ/(1−k) · d(x₁,x₀), que tiende a 0 porque 0&lt;k&lt;1. Por lo tanto (xₙ) es de Cauchy. Como X es completo, existe x=lim xₙ. Finalmente, usando T y el límite, se obtiene x=Tx, así que x es un punto fijo.<br />
+La idea oral para recordar el teorema es: <strong>empiezo en cualquier punto, aplico T repetidamente, la contracción hace que los puntos se acerquen, obtengo una sucesión de Cauchy, la completitud me da el límite y ese límite termina siendo el punto fijo.<br />
+Aplicación a ecuaciones diferenciales<br />
+</strong>El PDF considera D⊂ℝ² abierto y conexo y una función f:D→ℝ que es Lipschitz en la segunda variable. La condición de Lipschitz es que existe M tal que |f(x,y₁)−f(x,y₂)| ≤ M|y₁−y₂|. El objetivo es demostrar existencia y unicidad de una solución de y′=f(x,y) que pase por un punto dado.<br />
+Primero se define una <strong>solución local</strong> φ:I→ℝ alrededor de (x₀,y₀), que debe cumplir φ(x₀)=y₀, (x,φ(x))∈D y φ′(x)=f(x,φ(x)). El PDF transforma la ecuación diferencial en una ecuación integral: φ(x)=y₀+∫ₓ₀ˣ f(t,φ(t))dt.<br />
+Después se construye un espacio B de funciones continuas suficientemente restringidas y se define T:B→B mediante (Tψ)(x)=y₀+∫ₓ₀ˣ f(t,ψ(t))dt. Primero se demuestra que T lleva B en B. Después se demuestra que T es una contracción porque d(Tψ₁,Tψ₂)≤Md·d(ψ₁,ψ₂), y como se elige d de manera que Md&lt;1, T es contracción. Como B es completo, el teorema del punto fijo garantiza un φ tal que Tφ=φ. Derivando la ecuación integral se obtiene φ′(x)=f(x,φ(x)), por lo que φ es solución local.</p>
+<h3 id="s27"><a class="anchor" href="#s27" aria-label="Enlace a la sección">#</a><strong>Extensión de la solución local</h3>
+<p class="from-h"></strong>Después el PDF explica cómo extender la solución local. Se toma el punto final de una solución local y se construye otra solución local alrededor de ese nuevo punto. Como ambas pasan por el mismo punto y la solución local es única, coinciden en la zona donde se superponen. De esa manera se pueden “pegar” las soluciones locales y continuar la solución a través de D′. Repitiendo el proceso se obtiene una solución cada vez más extensa.<br />
+La idea final es que los intervalos de extensión no pueden detenerse arbitrariamente dentro de D′; el PDF demuestra que uno puede acercarse tanto como quiera a la frontera de D′. Luego se plantea D como unión de conjuntos crecientes D′ₙ para extender la solución a todo D.<br />
+<strong>Aplicación a ecuaciones integrales<br />
+</strong>Se consideran K:[a,b]×[a,b]→ℝ continua, g:[a,b]→ℝ continua y λ∈ℝ, y se busca resolver f(x)=λ∫ₐᵇ K(x,y)f(y)dy+g(x). Si λ=0, la solución es simplemente f=g. Si λ≠0, se define T:C→C[a,b] por (Tf)(x)=λ∫ₐᵇ K(x,y)f(y)dy+g(x), de modo que resolver la ecuación equivale a encontrar un punto fijo de T.<br />
+Como K es continua sobre un compacto, está acotada: |K(x,y)|≤M. Entonces se obtiene d(Tf,Th)≤|λ|M(b−a)d(f,h). Por lo tanto, T es una contracción cuando |λ|M(b−a)&lt;1. Como C[a,b] con d∞ es completo, el teorema del punto fijo garantiza entonces una solución.</p>
+<h2 id="s28"><a class="anchor" href="#s28" aria-label="Enlace a la sección">#</a>COMPLETACIÓN DE ESPACIOS MÉTRICOS</h2>
+<h3 id="s29"><a class="anchor" href="#s29" aria-label="Enlace a la sección">#</a><strong>Idea de completación</h3>
+<p class="from-h"></strong>Así como se puede completar ℚ agregando los límites que faltan y obtener ℝ, también se puede tomar cualquier espacio métrico que no sea completo y construir un espacio completo que lo contenga densamente. El PDF afirma que para todo espacio métrico (X,d) existe un espacio completo (X*,d*) en el cual X se puede identificar con un subconjunto denso. Además, este espacio completo es único salvo isometrías biyectivas.<br />
+La idea es que <strong>X</strong>* es el espacio que obtenemos al agregar todos los “límites que faltaban” en X.<br />
+<strong>Cómo se construye X*<br />
+</strong>Se considera primero el conjunto de todas las sucesiones de Cauchy de X. Dos sucesiones de Cauchy x=(xₙ) e y=(yₙ) se consideran equivalentes si d(xₙ,yₙ)→0. Es decir, representan el mismo punto si se acercan cada vez más entre sí. Entonces X* se define como el conjunto de las clases de equivalencia [x].<br />
+La distancia en X* se define mediante d*([x],[y]) = lim d(xₙ,yₙ). Para que esta definición tenga sentido, primero hay que demostrar que la sucesión de números reales d(xₙ,yₙ) es de Cauchy. El PDF lo demuestra usando la desigualdad triangular y el hecho de que tanto (xₙ) como (yₙ) son Cauchy. Así el límite existe porque ℝ es completo.<br />
+<strong>d* realmente es una métrica<br />
+</strong>Después el PDF demuestra las propiedades necesarias. Primero, d* no depende de los representantes elegidos de las clases de equivalencia. Si x ℛ a e y ℛ b, entonces d(xₙ,aₙ)→0 y d(yₙ,bₙ)→0, y por desigualdad triangular se obtiene d*(x,y)=d*(a,b). También se demuestra que d*(x,y)=0 si y solo si [x]=[y], que d* es simétrica y que satisface la desigualdad triangular.<br />
+<strong>Cómo se identifica X dentro de X*<br />
+</strong>Cada punto x∈X se puede representar mediante la sucesión constante (x,x,x,…), que es una sucesión de Cauchy. Se define entonces T:X→X* mediante Tx=(x,x,x,…). Esta aplicación es una isometría porque d*(Tx,Ty)=d(x,y). Así podemos identificar X con su imagen T(X) dentro de X*.<br />
+<strong>X es denso en X*<br />
+</strong>Para demostrar que T(X) es denso en X*, tomamos cualquier clase [x], representada por una sucesión de Cauchy (xₙ). Como la sucesión es de Cauchy, a partir de cierto N todos sus términos están cerca de x_N. Entonces consideramos el punto de X* representado por la sucesión constante x_N,x_N,x_ N,… y obtenemos d*([x],x_N)&lt;ε. Por lo tanto, cualquier punto de X* puede aproximarse arbitrariamente por puntos de X.<br />
+<strong>X* es completo<br />
+</strong>Finalmente hay que demostrar que X* es completo. Se toma una sucesión de Cauchy en X*. Para cada xₙ se elige un punto zₙ de T(X) tal que d*(xₙ,zₙ)&lt;1/n. Como xₙ es Cauchy y cada xₙ está a menos de 1/n de zₙ, se demuestra que (zₙ) también es Cauchy. Como los zₙ pertenecen a T(X), se pueden ver como elementos de X, y por las propiedades de la isometría se obtiene una sucesión de Cauchy en X.<br />
+Se construye entonces z=(z₁,z₂,z₃,…) y se demuestra que la sucesión original (xₙ) converge a z en X*. La cota esencial es d*(xₙ,z) &lt; 1/n, que tiende a 0. Por lo tanto, X* es completo.<br />
+<strong>Unicidad de la completación<br />
+</strong>El último resultado dice que la completación es <strong>única salvo isometrías biyectivas</strong>. Supongamos que tenemos dos completaciones X* y X′ del mismo espacio X, con isometrías T:X→X* y T′:X→X′ y ambas imágenes densas. En T(X) podemos definir T′∘T⁻¹, que transforma un punto de una copia de X en la otra conservando distancias. Como T(X) es denso en X*, esta aplicación se puede extender a todo X*. El resultado es una isometría biyectiva G:X*→X′. Por lo tanto, aunque podamos construir la completación de distintas maneras, todas son esencialmente el mismo espacio métrico desde el punto de vista de las distancias.</p>
+<h2 id="s30"><a class="anchor" href="#s30" aria-label="Enlace a la sección">#</a>3. CATEGORÍA</h2>
+<h3 id="s31"><a class="anchor" href="#s31" aria-label="Enlace a la sección">#</a>Conjuntos nunca densos</h3>
+<p>Sea (X,d) un espacio métrico. Un conjunto A ⊂ X se dice <strong>nunca denso</strong> si el interior de su clausura es vacío: (Ā)° = ∅. O sea, la clausura de A no contiene ninguna bola abierta. Ejemplo 1. El conjunto vacío, ∅, es nunca denso, ya que su clausura es el propio conjunto vacío y no contiene ninguna bola abierta. Ejemplo 2. En ℝⁿ, un conjunto formado por un único punto, A = {x} , es nunca denso. Ejemplo 3. En ℝⁿ, una recta es nunca densa, siempre que n ≥ 2. La recta no contiene ninguna bola abierta del espacio. Ejemplo 4. La frontera de una bola, ∂B(x,r) = Sⁿ⁻¹, es nunca densa en ℝⁿ. Es decir, la esfera (que constituye la superficie de una bola) no contiene ninguna bola abierta.</p>
+<h3 id="s32"><a class="anchor" href="#s32" aria-label="Enlace a la sección">#</a>Observaciones: Unión de conjuntos nunca densos</h3>
+<p>i) <strong>Unión finita:</strong> ∀i=1,...,n, Aᵢ es nunca denso ⇒ ⋃ᵢ₌₁ⁿ Aᵢ es nunca denso. La unión finita de conjuntos nunca densos siempre es nunca densa.</p>
+<p>ii) <strong>Racionales:</strong> Sea Aᵢ ={qᵢ} , con qᵢ ∈ ℚ. ⋃ᵢ₌₁∞ Aᵢ = ℚ y ℚ̄ = ℝ. Aunque cada conjunto Aᵢ es nunca denso, su unión es ℚ, cuya clausura es ℝ. Por tanto, la unión no es nunca densa.</p>
+<p>iii) <strong>Sucesión 1/i:</strong> Sea Aᵢ = {1/i), con i ∈ ℕ. ¯⋃ᵢ₌₁∞ Aᵢ = {0}U{1/i : i ∈ ℕ}. La clausura incorpora el 0 como punto de acumulación, pero no contiene ninguna bola abierta. Por tanto, la unión sí es nunca densa.</p>
+<p>La conclusión es que la unión finita de conjuntos nunca densos es nunca densa (i), pero la unión numerable puede serlo o no (ii y iii).</p>
+<h3 id="s33"><a class="anchor" href="#s33" aria-label="Enlace a la sección">#</a>Conjuntos de primera categoría</h3>
+<p>Un conjunto A es de <strong>primera categoría</strong> sii A = ⋃ᵢ₌₁∞ Aᵢ, donde cada Aᵢ es nunca denso. O sea, puede expresarse como una unión numerable de conjuntos nunca densos. Por ejemplo, los <strong>racionales</strong>. ℚ es de primera categoría porque podemos enumerar sus elementos como q₁, q₂, q₃, … y expresar ℚ como la unión de los conjuntos que contienen a cada qᵢ (cada uno de esos conjuntos es nunca denso en ℝ).</p>
+<h3 id="s34"><a class="anchor" href="#s34" aria-label="Enlace a la sección">#</a>Conjuntos de segunda categoría</h3>
+<p>Un conjunto es de segunda categoría si no es de primera categoría. O sea, no puede expresarse como una unión numerable de conjuntos nunca densos.</p>
+<h3 id="s35"><a class="anchor" href="#s35" aria-label="Enlace a la sección">#</a>Proposición: caracterización de los conjuntos de segunda categoría</h3>
+<p>X es de segunda categoría ⇔ ∀ {Fᵢ} tal que Fᵢ = F̄ᵢ y ⋃ᵢ₌₁∞ Fᵢ = X, ∃ i₀ tal que Fᵢ₀ contiene alguna bola. O sea, es de segunda categoría sii para toda familia de conjuntos cerrados Fᵢ cuya unión sea X, alguno de ellos contiene una bola abierta.</p>
+<p>Demostración:</p>
+<p>(⇒)Supongamos que X es de segunda categoría y que X es la unión de una familia numerable de conjuntos cerrados Fᵢ. Si ninguno contuviera una bola abierta, cada Fᵢ sería nunca denso, porque es cerrado y tiene interior vacío. Por lo tanto, X sería una unión numerable de conjuntos nunca densos y sería de primera categoría. Esto contradice nuestra hipótesis. Por lo tanto, al menos uno de los Fᵢ contiene una bola abierta.</p>
+<p>(⇐) Supongamos que toda cobertura de X a través de conjuntos cerrados contiene al menos uno que contiene una bola abierta. Si X fuera de primera categoría, podríamos expresarlo como una unión numerable de conjuntos nunca densos Aᵢ. Tomando sus clausuras, obtendríamos una cobertura de X mediante conjuntos cerrados que siguen siendo nunca densos. Ninguno contendría una bola abierta, contradiciendo la hipótesis. Por lo tanto, X es de segunda categoría.</p>
+<h3 id="s36"><a class="anchor" href="#s36" aria-label="Enlace a la sección">#</a>Teorema de Baire: todo espacio métrico completo es de segunda categoría</h3>
+<p>La demostración se hace por contradicción. Supongamos que X es completo, pero no es de segunda categoría. Entonces podemos escribir X como una unión numerable de conjuntos cerrados F₁, F₂, F₃, …, ninguno de los cuales contiene una bola abierta.</p>
+<p>El objetivo es construir una sucesión de bolas cada vez más chicas y encajadas que eviten, una por una, las sucesivas partes de esa cobertura.</p>
+<p>Primero, como F₁ es cerrado y no contiene ninguna bola abierta, su complemento X − F₁ es abierto y no vacío. Podemos elegir un punto x₁ fuera de F₁ y un radio ε₁ menor que 1, de modo que B(x₁,ε₁) quede completamente fuera de F₁.</p>
+<p>Segundo, como F₂ no contiene ninguna bola abierta, existe un punto x₂ que está fuera de F₂ y dentro de la bola B(x₁,ε₁/2). Elegimos un radio ε₂ suficientemente pequeño para que B(x₂,ε₂) quede contenida en B(x₁,ε₁/2) y fuera de F₂.</p>
+<p>Repetimos. Elegimos x₃ fuera de F₃ y dentro de B(x₂,ε₂/2²), y un radio ε₃ suficientemente pequeño para que la nueva bola quede dentro de esa región y fuera de F₃.</p>
+<p>Continuando indefinidamente, construimos bolas B(xₙ,εₙ) que cumplen estas cuatro propiedades:</p>
+<ol type="1">
+<li><p>Cada centro xₙ está fuera de Fₙ.</p>
+</li>
+<li><p>Cada bola siguiente está contenida en una región cada vez más pequeña de la anterior.</p>
+</li>
+<li><p>Cada bola B(xₙ,εₙ) no intersecta Fₙ.</p>
+</li>
+<li><p>Los radios satisfacen εₙ &lt; 1/2ⁿ⁻¹ y, por lo tanto, tienden a cero.</p>
+</li>
+</ol>
+<p>¿Por qué la sucesión de centros es de Cauchy? Si m &gt; n, el centro xₘ pertenece a B(xₙ,εₙ/2ⁿ). Por lo tanto, d(xₘ,xₙ) &lt; εₙ/2ⁿ &lt; 1/2ⁿ. Como esta última cantidad tiende a cero, las distancias entre los centros se hacen arbitrariamente pequeñas. Así, (xₙ) es una sucesión de Cauchy.</p>
+<p>Como X es completo, existe un límite x₀ ∈ X tal que xₙ → x₀.</p>
+<p>La contradicción final. Para cada n, todos los centros posteriores a xₙ están dentro de B(xₙ,εₙ/2ⁿ). Como xₘ converge a x₀, el límite queda dentro de la bola más grande B(xₙ,εₙ). Pero esta bola no intersecta Fₙ. Por lo tanto, x₀ no pertenece a Fₙ para ningún n.</p>
+<p>Sin embargo, habíamos supuesto que X era la unión de todos los Fₙ. Entonces x₀ debería pertenecer a alguno de ellos. Esta contradicción demuestra que X es de segunda categoría.</p>
+<h3 id="s37"><a class="anchor" href="#s37" aria-label="Enlace a la sección">#</a>Corolario</h3>
+<p>Si X es completo y A ⊂ X es de primera categoría, entonces el complemento de A no es vacío: X − A ≠ ∅.</p>
+<p>Demostración: Si el complemento fuera vacío, entonces A = X. Eso significaría que X es de primera categoría, lo que contradice el teorema de Baire, que dice que todo espacio métrico completo es de segunda categoría. Por lo tanto, siempre existe al menos un punto de X que no pertenece a A.</p>
+<h3 id="s38"><a class="anchor" href="#s38" aria-label="Enlace a la sección">#</a>Aplicación: existen funciones continuas que no son diferenciables en ningún punto</h3>
+<p>Para esto, se considera el espacio X formado por funciones f que cumplen f(x) = f(x+1) para todo x y cuya restricción al intervalo [0,1] pertenece a C₀. Este último conjunto está formado por las funciones continuas en [0,1] que cumplen f(0) = f(1) = 0.</p>
+<p>Por lo tanto, estamos considerando funciones continuas periódicas de período 1. La distancia entre dos funciones se mide mediante la distancia uniforme: d∞(f,g) = supₜ∈ℝ |f(t)−g(t)| = supₜ∈[0,1] |f(t)−g(t)|.</p>
+<p>Se define K como el conjunto de funciones f ∈ X para las que existe un punto ξ y una constante A tales que, para todo h &gt; 0, se cumple |f(ξ+h)−f(ξ)|/h ≤ A.</p>
+<p>Esto significa que existe al menos un punto en el que el cociente incremental hacia la derecha permanece acotado. Después se definen los conjuntos Kₙ, formados por las funciones para las cuales existe un punto ξ que cumple esa misma desigualdad con cota n. Así, K es la unión numerable de todos los Kₙ.</p>
+<h3 id="s39"><a class="anchor" href="#s39" aria-label="Enlace a la sección">#</a>Proposición: K es de primera categoría</h3>
+<p>K = {f ∈ X/ ∃ ξ , ∃ A ∶ ∀h &gt; 0 |f(ξ+ h) – f(ξ)|/h ≤ A}</p>
+<p>Establecemos dos propiedades para cada Kₙ: es cerrado y su complemento es denso. Como consecuencia, cada Kₙ es nunca denso.</p>
+<p>i) Kₙ es cerrado: Tomamos una sucesión de funciones fₖ que pertenece a Kₙ y que converge uniformemente a una función f. Como cada fₖ pertenece a Kₙ, existe un punto ξₖ ∈ [0,1] tal que, para todo h &gt; 0, se cumple |fₖ(ξₖ+h)−fₖ(ξₖ)|/h ≤ n.</p>
+<p>Los puntos ξₖ pertenecen al intervalo compacto [0,1]. Por el teorema de Bolzano-Weierstrass, existe una subsucesión convergente. Podemos suponer, sin pérdida de generalidad, que ξₖ → ξ para algún ξ ∈ [0,1].</p>
+<p>El objetivo es demostrar que el límite f también pertenece a Kₙ y que el punto ξ nos sirve para verificar la desigualdad.</p>
+<p>Para esto, fijamos h &gt; 0 y consideramos el cociente incremental de f. Lo comparamos con el de fₖ usando la desigualdad triangular, separando la diferencia en cuatro errores y un término central:</p>
+<ul>
+<li><p>La diferencia entre f y fₖ en ξ+h.</p>
+</li>
+<li><p>La diferencia entre fₖ evaluada en ξ+h y en ξₖ+h.</p>
+</li>
+<li><p>El cociente incremental de fₖ en ξₖ, que está acotado por n.</p>
+</li>
+<li><p>La diferencia entre fₖ evaluada en ξₖ y en ξ.</p>
+</li>
+<li><p>La diferencia entre fₖ y f en ξ.</p>
+</li>
+</ul>
+<p>Los dos términos que comparan f y fₖ se pueden hacer pequeños porque fₖ converge uniformemente a f. Los otros dos se pueden hacer pequeños porque cada fₖ es uniformemente continua en [0,1] y ξₖ converge a ξ.</p>
+<p>Así, para cualquier ε &gt; 0 podemos conseguir que el cociente incremental de f en ξ sea menor o igual que n + ε. Como ε es arbitrario, concluimos que el cociente está acotado por n. Por lo tanto, f ∈ Kₙ y Kₙ es cerrado.</p>
+<p>ii) El complemento de Kₙ es denso</p>
+<p>Tomamos una función g ∈ X y un número ε &gt; 0. Queremos construir una función poligonal que esté a una distancia uniforme menor que ε de g, pero que no pertenezca a Kₙ. Para conseguirlo, construiremos una poligonal que tenga pendientes de valor absoluto mayor que n.</p>
+<p>Como g es continua en el intervalo compacto [0,1], es uniformemente continua. Por lo tanto, existe δ &gt; 0 tal que, si dos puntos x y x′ están suficientemente cerca —su distancia es menor que δ—, entonces |g(x)−g(x′)| &lt; ε/2.</p>
+<p>Elegimos un entero k suficientemente grande para que cada subintervalo de la partición tenga longitud menor que δ. Dividimos [0,1] en k intervalos iguales: [0,1/k], [1/k,2/k], y así sucesivamente, hasta [(k−1)/k,1].</p>
+<p>En cada intervalo construimos un rectángulo alrededor de la gráfica de g. La base es el propio subintervalo y la altura queda delimitada por los valores de g en su extremo izquierdo, con un margen de ε/2 por encima y por debajo.</p>
+<p>¿Por qué esta construcción funciona? Por la continuidad uniforme, los valores de g en los dos extremos de cada subintervalo difieren en menos de ε/2. Por lo tanto, la gráfica de g queda dentro de la zona vertical delimitada por ese rectángulo. Podemos dibujar dentro de él un segmento poligonal con pendiente de valor absoluto mayor que n sin alejarnos demasiado de g.</p>
+<p>Repetimos la construcción en cada subintervalo y obtenemos una función poligonal que permanece a una distancia uniforme menor que ε de g. Sin embargo, como sus pendientes tienen valor absoluto mayor que n, no pertenece a Kₙ.</p>
+<p>Como g y ε eran arbitrarios, podemos aproximar cualquier función de X mediante funciones que no pertenecen a Kₙ. Por lo tanto, el complemento de Kₙ es denso.</p>
+<p>Conclusión: cada Kₙ es cerrado y su complemento es denso. Por eso, cada Kₙ es nunca denso. Como K es la unión numerable de todos los Kₙ, K es de primera categoría.</p>
+<h3 id="s40"><a class="anchor" href="#s40" aria-label="Enlace a la sección">#</a>Corolario: una función continua que no es diferenciable en ningún punto</h3>
+<p>Sea D el conjunto de funciones de X que son diferenciables al menos en un punto. Una función diferenciable en un punto tiene el cociente incremental acotado hacia la derecha en ese punto, por lo que pertenece a K. Así, D ⊂ K.</p>
+<p>Como K es de primera categoría, D también es de primera categoría. Pero X es completo y, por el teorema de Baire, es de segunda categoría. Por lo tanto, el complemento de D en X no puede ser vacío.</p>
+<p>Existe entonces una función perteneciente a X que no es diferenciable en ningún punto. Como todas las funciones de X son continuas, queda demostrado que existen funciones continuas que no son diferenciables en punto alguno.</p>
+<h2 id="s41"><a class="anchor" href="#s41" aria-label="Enlace a la sección">#</a>4. COMPACIDAD</h2>
+<h3 id="s42"><a class="anchor" href="#s42" aria-label="Enlace a la sección">#</a>Compacidad de Fréchet</h3>
+<p>Un espacio métrico (X,d) es <strong>compacto en el sentido de Fréchet</strong> si todo subconjunto infinito de X tiene al menos un punto de acumulación perteneciente a X. X es compacto ⇔ para todo A ⊂ X, si A es infinito, entonces A′ ≠ ∅.</p>
+<p>Un conjunto K ⊂ X es compacto sii (K, d) compacto. Es decir que todo subconjunto infinito de K tiene un punto de acumulación que pertenece a K.</p>
+<p>Ejemplos:</p>
+<ul>
+<li><p>[0,1] es compacto. Tomamos un subconjunto infinito A ⊂ [0,1] y elegimos una sucesión de puntos distintos de A. Como está acotada, por Bolzano-Weierstrass podemos extraer una subsucesión convergente a un punto x. Ese punto es de acumulación de A y, como [0,1] es cerrado, x pertenece a [0,1]. Por lo tanto, todo subconjunto infinito de [0,1] tiene un punto de acumulación dentro del intervalo y [0,1] es compacto.</p>
+</li>
+<li><p>ℝ no es compacto. El conjunto ℕ es infinito y no tiene puntos de acumulación en ℝ.</p>
+</li>
+<li><p>ℚ ∩ [0,2] no es compacto. Podemos elegir una sucesión de racionales que converge a √2. Este es un punto de acumulación que no pertenece a ℚ ∩ [0,2]. Observación: Sin embargo, la clausura de ℚ ∩ [0,2] en ℝ es [0,2], que sí es compacto.</p>
+</li>
+</ul>
+<h4 id="s43"><a class="anchor" href="#s43" aria-label="Enlace a la sección">#</a>Relativamente compacto</h4>
+<p>Un conjunto A ⊂ X es <strong>relativamente compacto</strong> si su clausura en X es compacta. Por ejemplo, ℚ ∩ [0,2] es relativamente compacto como subconjunto de ℝ porque su clausura es [0,2], pero no como subconjunto de ℚ, porque su clausura en ℚ es el propio conjunto ℚ ∩ [0,2] y este no es compacto. Porque podemos tomar una sucesión de racionales que convergen a √2. Esa sucesión no tiene una subsucesión que converge a un racional de A, porque su límite es irracional.</p>
+<h4 id="s44"><a class="anchor" href="#s44" aria-label="Enlace a la sección">#</a>Precompacto</h4>
+<p>Un conjunto A es <strong>precompacto</strong> si su clausura en el completado de X es compacta. Por ejemplo, ℚ ∩ [0,2] es precompacto porque el completado de ℚ es ℝ y su clausura allí es [0,2].</p>
+<h3 id="s45"><a class="anchor" href="#s45" aria-label="Enlace a la sección">#</a>Secuencialmente compacto</h3>
+<p>Un espacio métrico X es <strong>secuencialmente compacto</strong> si toda sucesión de X tiene una subsucesión convergente a un punto de X. En símbolos: para toda sucesión (xₙ) ⊂ X, existen una subsucesión (xₙₖ) y un punto x₀ ∈ X tales que xₙₖ → x₀.</p>
+<h3 id="s46"><a class="anchor" href="#s46" aria-label="Enlace a la sección">#</a>X es compacto de Fréchet ⇔ X es secuencialmente compacto.</h3>
+<p>(⇒) Pueden pasar dos cosas: Si una sucesión tiene recorrido finito, alguno de sus valores se repite infinitas veces y podemos extraer una subsucesión constante. Si el recorrido es infinito, la compacidad garantiza un punto de acumulación y podemos extraer una subsucesión convergente a él.</p>
+<p>(⇐) Si A es infinito, elegimos una sucesión de puntos distintos de A. Por compacidad secuencial, existe una subsucesión convergente a un punto x₀ ∈ X. Como sus términos son distintos, x₀ es un punto de acumulación de A.</p>
+<h3 id="s47"><a class="anchor" href="#s47" aria-label="Enlace a la sección">#</a>Todo conjunto compacto es cerrado y acotado</h3>
+<p>Proposición: K ⊂ X, K <strong>compacto</strong> ⇒ K es <strong>cerrado y acotado</strong>.</p>
+<p>i) K es cerrado. Para demostrarlo, basta probar que todo punto de acumulación de K pertenece a K. Sea x un punto de acumulación de K. Entonces existe una sucesión (xₙ) ⊂ K tal que xₙ → x. Como K es compacto, podemos extraer una subsucesión (xₙₖ) que converge a un punto x′ ∈ K. Esa subsucesión también converge a x; por la unicidad del límite, x = x′ ∈ K. Por lo tanto, todos los puntos de acumulación de K pertenecen a K y K es cerrado.</p>
+<p>ii) K es acotado. Si K es finito, entonces es acotado. Supongamos que K es infinito y no acotado. Elegimos un punto x₁ ∈ K y consideramos la bola B(x₁,1). Como K no es acotado, no puede estar contenido en esa bola, así que elegimos x₂ ∈ K fuera de ella, de modo que d(x₂,x₁) &gt; 1. Después consideramos la unión de las bolas B(x₁,1) y B(x₂,1). Como es una unión finita de bolas, es acotada; por lo tanto, K tampoco puede estar contenido en ella y podemos elegir x₃ fuera de ambas bolas. Continuando así, construimos una sucesión (xₙ) de puntos de K tal que d(xₙ,xᵢ) &gt; 1 para todo i ≠ n. Como K es compacto, debería existir una subsucesión convergente y, por lo tanto, de Cauchy. Pero esto es imposible porque todos sus términos están separados por una distancia mayor que 1. Llegamos a una contradicción; por lo tanto, K es acotado.</p>
+<p><strong>Importante: K cerrado y acotado ⇏ K compacto.</strong></p>
+<p>Contraejemplo: Sea X = ℓ², consideramos los vectores unitarios eₖ, donde cada vector tiene un 1 en la posición k y ceros en las demás. Sea A el conjunto formado por todos esos vectores.</p>
+<ul>
+<li><p>d(eₖ,0) = 1 para todo k. Por lo tanto, <strong>A es acotado</strong>.</p>
+</li>
+<li><p><strong>A es cerrado</strong>: para k ≠ j, d(eₖ, eⱼ) = √2. Como los vectores distintos siempre están separados por esa distancia, no puede existir una sucesión de vectores distintos de A que converja. Por lo tanto, A no tiene puntos de acumulación, entonces A = Ā y, por lo tanto, es cerrado.</p>
+</li>
+</ul>
+<p>Así, A es cerrado y acotado, pero no compacto (A es infinito y no tiene puntos de acumulación).</p>
+<h3 id="s48"><a class="anchor" href="#s48" aria-label="Enlace a la sección">#</a>Todo espacio métrico compacto es completo</h3>
+<p>Proposición: X <strong>compacto</strong> ⇒ X <strong>completo</strong>.</p>
+<p>Sea (xₙ) una sucesión de Cauchy en X. Como X es compacto, existe una subsucesión convergente a un punto x₀ ∈ X. Como la sucesión original es de Cauchy y tiene una subsucesión que converge a x₀, toda la sucesión converge a x₀. Por lo tanto, X es completo.</p>
+<p>El recíproco no vale: ℝ es completo, pero no compacto, porque ℕ es un subconjunto infinito sin puntos de acumulación en ℝ.</p>
+<h3 id="s49"><a class="anchor" href="#s49" aria-label="Enlace a la sección">#</a>Totalmente acotado</h3>
+<p>Un espacio métrico X es <strong>totalmente acotado</strong> si, para todo ε &gt; 0, existen una cantidad finita de puntos x₁, …, xₚ cuyas bolas de radio ε cubren todo X.</p>
+<p>En símbolos: para todo ε &gt; 0, existen x₁, …, xₚ tales que X = ⋃ᵢ₌₁ᵖ B(xᵢ,ε).</p>
+<p>El conjunto de esos centros se llama ε-retículo. La idea es que podemos aproximar todos los puntos del espacio mediante una cantidad finita de centros, con un error menor que ε.</p>
+<p>Proposición: X totalmente acotado ⇒ X acotado.</p>
+<p>Tomamos un ε-retículo para ε = 1. Como hay una cantidad finita de centros, todos los puntos de X quedan a una distancia acotada de un centro. Por lo tanto, X es acotado.</p>
+<p>Ejemplo 1: X = (0,1). Para cualquier ε &gt; 0, elegimos un entero n suficientemente grande para que 1/n &lt; ε. Dividimos el intervalo en n partes iguales y tomamos como centros los puntos i/n, con i = 1, …, n−1. Las bolas de radio ε centradas en esos puntos cubren (0,1). Por lo tanto, (0,1) es totalmente acotado.</p>
+<p>Ejemplo 2: acotado no implica totalmente acotado. En ℓ², los vectores unitarios eₖ son acotados porque d(eₖ,0) = 1. Sin embargo, d(eₖ,eⱼ) = √2 cuando k ≠ j. Para radios suficientemente pequeños, no podemos cubrir todos esos puntos con una cantidad finita de bolas. Por lo tanto, el conjunto no es totalmente acotado.</p>
+<h3 id="s50"><a class="anchor" href="#s50" aria-label="Enlace a la sección">#</a>Lema: acotación total y sucesiones de Cauchy</h3>
+<p>Lema: X es totalmente <strong>acotado</strong> ⇔ toda sucesión en X <strong>tiene una subsucesión de Cauchy</strong>.</p>
+<p>(⇒) Supongamos que X es totalmente acotado y sea (xₙ) una sucesión cualquiera de X. Si el recorrido es finito, trivial. Si es infinito, como X es totalmente acotado, podemos cubrirlo con una cantidad finita de bolas de radio 1/2. Al menos una de esas bolas contiene infinitos términos de la sucesión; seleccionamos esos términos y obtenemos una primera subsucesión. Después, cubrimos X con una cantidad finita de bolas de radio 1/2² y elegimos una que contenga infinitos términos de la subsucesión anterior. Repetimos el procedimiento con radios cada vez más pequeños: 1/2, 1/2², 1/2³, etc. En cada etapa obtenemos una subsucesión de la anterior. Finalmente, construimos una subsucesión diagonal, seleccionando términos de esas subsucesiones en orden creciente. A partir de cada etapa, todos los términos seleccionados quedan dentro de una misma bola cuyo radio tiende a cero. Por eso, la distancia entre dos términos suficientemente avanzados puede hacerse tan pequeña como queramos. Esto significa que la subsucesión diagonal es de Cauchy.</p>
+<p>(⇐) Supongamos que X no es totalmente acotado. Entonces existe ε &gt; 0 para el cual ninguna familia finita de bolas de radio ε cubre X. Podemos elegir sucesivamente puntos x₁, x₂, … de modo que d(xₖ,xᵢ) &gt; ε siempre que k &gt; i. Esta sucesión no tiene ninguna subsucesión de Cauchy, porque sus términos permanecen separados por una distancia mayor que ε. Esto contradice la hipótesis.</p>
+<h3 id="s51"><a class="anchor" href="#s51" aria-label="Enlace a la sección">#</a>Teorema fundamental de compacidad</h3>
+<p>Teorema: Un espacio métrico X es <strong>compacto</strong> ⇔ X es <strong>completo</strong> y <strong>totalmente acotado</strong>.</p>
+<p>Si X es compacto, ya vimos que es completo. Además, toda sucesión tiene una subsucesión convergente y, por lo tanto, de Cauchy. Por el lema anterior, X es totalmente acotado.</p>
+<p>Si X es completo y totalmente acotado, el lema garantiza que toda sucesión tiene una subsucesión de Cauchy. Como X es completo, esa subsucesión converge en X. Por lo tanto, X es secuencialmente compacto y, en consecuencia, compacto.</p>
+<p>Para recordar: en espacios métricos, la compacidad equivale a la combinación de completitud y acotación total.</p>
+<h3 id="s52"><a class="anchor" href="#s52" aria-label="Enlace a la sección">#</a>Todo espacio totalmente acotado es separable</h3>
+<p>Proposición: X <strong>totalmente acotado</strong> ⇒ X <strong>separable</strong>.</p>
+<p>Un espacio es separable si contiene un subconjunto numerable y denso.</p>
+<p>Sea εₙ = 1/n. Para cada n, consideramos el εₙ-retículo (conjunto de centros) R₁/ₙ = {x₍ₙ,ᵢ₎ : i = 1, …, kₙ}, es decir, el conjunto finito de centros de bolas de radio 1/n que cubren X. En la notación x₍ₙ,ᵢ₎, n identifica el retículo y el radio de sus bolas, mientras que i identifica cada centro dentro de ese retículo. Por lo tanto, X = ⋃ᵢ₌₁ᵏⁿ B(x₍ₙ,ᵢ₎, 1/n). Definimos D = ⋃ₙ₌₁∞ R₁/ₙ. Como D es una unión numerable de conjuntos finitos, es numerable. Para ver que es denso, tomamos x ∈ X y ε &gt; 0, y elegimos n tal que 1/n &lt; ε. Como las bolas del retículo cubren X, existe un centro x₍ₙ,ᵢ₎ ∈ D tal que d(x, x₍ₙ,ᵢ₎) &lt; 1/n &lt; ε. Por lo tanto, D es denso y numerable, así que X es separable.</p>
+<p>Corolario: X compacto ⇒ X totalmente acotado ⇒ X separable.</p>
+<h3 id="s53"><a class="anchor" href="#s53" aria-label="Enlace a la sección">#</a>Compacidad y cubrimientos abiertos</h3>
+<p>Un cubrimiento abierto de X es una familia de conjuntos abiertos cuya unión es X. Un subcubrimiento es una subfamilia que sigue cubriendo todo X.</p>
+<p>Teorema: X es <strong>compacto</strong> ⇔ todo cubrimiento abierto de X <strong>tiene un subcubrimiento finito</strong>.</p>
+<p>(⇒) Como X es compacto, es separable, por lo que podemos reducir el cubrimiento a una familia numerable G₁, G₂, …. Si ningún número finito de esos conjuntos cubriera X, podríamos elegir xₙ fuera de la unión de los primeros n−1 conjuntos. Por compacidad, existe una subsucesión convergente a x₀ ∈ X. Como los Gᵢ cubren X, x₀ pertenece a algún Gᵢ. Al ser abierto, todos los términos suficientemente avanzados de la subsucesión deberían pertenecer a Gᵢ. Pero, por la construcción, xₙ queda fuera de Gᵢ cuando n &gt; i. Esto es una contradicción.</p>
+<p>(⇐) Si X no fuera compacto, existiría un conjunto infinito A sin puntos de acumulación. Para cada x ∈ X podemos elegir una bola abierta que no contenga ningún otro punto de A, salvo posiblemente x. Estas bolas cubren X, pero ninguna cantidad finita de ellas puede cubrir todos los puntos de A. Por lo tanto, no existe un subcubrimiento finito.</p>
+<h3 id="s54"><a class="anchor" href="#s54" aria-label="Enlace a la sección">#</a>Continuidad y continuidad uniforme</h3>
+<p>Una función T: X → Y es continua en x₀ si toda sucesión que converge a x₀ tiene una imagen que converge a T(x₀). Para todo ε &gt; 0 existe δ &gt; 0 tal que d(x,x₀) &lt; δ implica d′(T(x),T(x₀)) &lt; ε.</p>
+<p>Equivalentemente, T es continua si y solo si la preimagen de todo abierto de Y es abierta en X: T⁻¹(G) es abierto para todo abierto G ⊂ Y.</p>
+<p>Una función es uniformemente continua si la misma δ sirve para todos los puntos del dominio:</p>
+<p>Para todo ε &gt; 0 existe δ &gt; 0 tal que, para todos x₁,x₂ ∈ X, d(x₁,x₂) &lt; δ ⇒ d′(T(x₁),T(x₂)) &lt; ε.</p>
+<p>Toda función uniformemente continua es continua, pero el recíproco no es cierto.</p>
+<p><strong>Ejemplo</strong>: T(x) = 1/x en (0,∞) es continua, pero no uniformemente continua. Para cualquier δ &gt; 0, elegimos un entero N suficientemente grande y tomamos x = 1/N e y = 2/N. Entonces d(x,y) = 1/N &lt; δ, pero la diferencia entre las imágenes es N/2. Como esta diferencia puede hacerse arbitrariamente grande, no existe una δ común que funcione para todos los puntos. En cambio, T(x) = 1/x en (2,∞) sí es uniformemente continua.</p>
+<h4 id="s55"><a class="anchor" href="#s55" aria-label="Enlace a la sección">#</a>Continuidad sobre dominios compactos</h4>
+<p>Proposición: Si X es <strong>compacto</strong> y T: X → Y es <strong>continua</strong>, entonces T es <strong>uniformemente continua</strong>.</p>
+<p>La continuidad proporciona, alrededor de cada punto x, una bola donde las imágenes no se alejan demasiado de T(x). Esas bolas cubren X. Por compacidad, podemos elegir una cantidad finita de ellas y tomar el mínimo de sus radios adecuados. Ese mínimo es una δ positiva que funciona en todo X.</p>
+<h4 id="s56"><a class="anchor" href="#s56" aria-label="Enlace a la sección">#</a>Imagen continua de un compacto y extremos</h4>
+<p>Si T es continua y K es compacto, entonces T(K) es compacto.</p>
+<p>Corolario: Si f: X → ℝ es continua y X es compacto, existen puntos xₘ y xₘᵢₙ donde f alcanza su máximo y su mínimo:</p>
+<p>f(xₘ) = maxₓ∈X f(x)</p>
+<p>f(xₘᵢₙ) = minₓ∈X f(x)</p>
+<p>La razón es que f(X) es compacto en ℝ. Por lo tanto, es cerrado y acotado, y contiene sus extremos superior e inferior, que son valores alcanzados por f.</p>
+<h3 id="s57"><a class="anchor" href="#s57" aria-label="Enlace a la sección">#</a>Conexión</h3>
+<p>Un espacio X es <strong>disconexo</strong> si puede escribirse como la unión de dos abiertos no vacíos y disjuntos, A y B. Es decir, A ∩ B = ∅ y A ∪ B = X. X es <strong>conexo</strong> si no existe una descomposición de ese tipo.</p>
+<p>Un subconjunto A ⊂ X es conexo si no puede descomponerse en dos abiertos relativos no vacíos y disjuntos.</p>
+<p>Resultados del PDF:</p>
+<ul>
+<li><p>La imagen continua de un conjunto conexo es conexa.</p>
+</li>
+<li><p>Todo subconjunto conexo de ℝ es un intervalo.</p>
+</li>
+<li><p>Si X es conexo y T: X → ℝ es continua, entonces T(X) es un intervalo.</p>
+</li>
+</ul>
+<h3 id="s58"><a class="anchor" href="#s58" aria-label="Enlace a la sección">#</a>Teorema de Arzelà-Ascoli</h3>
+<p>Se considera C(X), el espacio de funciones continuas f: X → ℝ, con X compacto, con la distancia uniforme: d∞(f,g) = supₓ∈X |f(x) − g(x)|.</p>
+<h4 id="s59"><a class="anchor" href="#s59" aria-label="Enlace a la sección">#</a>Definiciones</h4>
+<p>Una familia F de funciones es <strong>uniformemente acotada</strong> si existe M &gt; 0 tal que, para toda f ∈ F y todo x ∈ X, se cumple |f(x)| ≤ M.</p>
+<p>Una familia F es <strong>equicontinua</strong> si para todo ε &gt; 0 existe δ &gt; 0 tal que, para todas las funciones f ∈ F y todos x,y ∈ X,</p>
+<p>d(x,y) &lt; δ ⇒ |f(x) − f(y)| &lt; ε.</p>
+<p>La diferencia importante es que, en la equicontinuidad, la misma δ debe funcionar para todas las funciones de la familia.</p>
+<p><strong>Observación</strong>: si F es equicontinua, cada función f ∈ F es uniformemente continua.</p>
+<h4 id="s60"><a class="anchor" href="#s60" aria-label="Enlace a la sección">#</a>Ejemplo: fₙ(x) = 1/(1+nx), con x ≥ 0</h4>
+<p>Para cada n, fₙ es uniformemente continua. Sin embargo, la familia no es equicontinua.</p>
+<p>Para cualquier δ &gt; 0, elegimos n suficientemente grande y tomamos x = 1/n e y = 2/n. Entonces |x−y| = 1/n &lt; δ.</p>
+<p>Pero fₙ(x) = 1/2 y fₙ(y) = 1/3, por lo que |fₙ(x)−fₙ(y)| = 1/6.</p>
+<p>La distancia entre los puntos puede hacerse arbitrariamente pequeña, mientras que la diferencia entre sus imágenes sigue siendo 1/6. Por eso, no existe una δ común para toda la familia.</p>
+<h4 id="s61"><a class="anchor" href="#s61" aria-label="Enlace a la sección">#</a>Enunciado de Arzelà-Ascoli</h4>
+<p>Teorema: Si X es un espacio métrico <strong>compacto</strong>, un conjunto K ⊂ C(X) es <strong>relativamente</strong> <strong>compacto</strong> si y sólo si es <strong>uniformemente acotado y equicontinuo.</strong></p>
+<p>En otras palabras, estas dos condiciones caracterizan cuándo podemos extraer de cualquier sucesión de funciones de K una subsucesión uniformemente convergente.</p>
+<h4 id="s62"><a class="anchor" href="#s62" aria-label="Enlace a la sección">#</a>Idea de la demostración</h4>
+<p>Si K es relativamente compacto, su clausura es compacta en C(X), por lo que es acotada y K es uniformemente acotado.</p>
+<p>Además, como la clausura es totalmente acotada, podemos aproximar todas las funciones de K mediante una cantidad finita de funciones continuas. Cada una es uniformemente continua en X, porque X es compacto. Tomando el mínimo de una cantidad finita de radios y aplicando la desigualdad triangular, se obtiene una δ que funciona para toda la familia. Así, K es equicontinuo.</p>
+<p>En sentido inverso, supongamos que K es uniformemente acotado y equicontinuo. La acotación uniforme limita los valores que las funciones pueden tomar; la equicontinuidad controla cuánto pueden variar entre puntos cercanos.</p>
+<p>Como X es compacto, podemos cubrirlo mediante una cantidad finita de bolas pequeñas. En sus centros, dividimos el intervalo de posibles valores de las funciones en una cantidad finita de intervalos pequeños. Existen entonces una cantidad finita de combinaciones posibles de valores aproximados.</p>
+<p>Elegimos una función representativa para cada combinación que aparece. La acotación uniforme y la equicontinuidad permiten demostrar que esas funciones forman una red finita para K con la distancia uniforme. Por lo tanto, K es totalmente acotado.</p>
+<p>Como C(X) es completo y la clausura de K es cerrada, esa clausura también es completa. Al ser completa y totalmente acotada, es compacta. En consecuencia, K es relativamente compacto.</p>
+<h3 id="s63"><a class="anchor" href="#s63" aria-label="Enlace a la sección">#</a>Ejemplos de Arzelà-Ascoli</h3>
+<p>El PDF presenta cuatro ejemplos para distinguir la acotación uniforme, la equicontinuidad y la convergencia uniforme.</p>
+<p>Ejemplo 1. X = [0,1] y fₙ(x) = (−1)ⁿ(1−x/n)ⁿ.</p>
+<p>La familia está uniformemente acotada por 1. Además, la estimación de la derivada permite obtener |fₙ(x)−fₙ(y)| ≤ |x−y|. Por lo tanto, es equicontinua. Por Arzelà-Ascoli, la familia es relativamente compacta: podemos extraer subsucesiones uniformemente convergentes.</p>
+<p>Ejemplo 2. X = [0,1] y fₙ(x) = xⁿ.</p>
+<p>La familia está uniformemente acotada por 1, pero no converge uniformemente. Su límite puntual es 0 para x ∈ [0,1) y 1 en x = 1. Esa función límite es discontinua, por lo que no puede ser el límite uniforme de funciones continuas.</p>
+<p>Tampoco hay equicontinuidad. Tomamos x = 1 e y = 1−1/n: la distancia es 1/n, que tiende a cero, pero la diferencia entre las imágenes tiende a 1−1/e, que no es cero.</p>
+<p>Ejemplo 3. X = [0,1] y fₙ(x) = n sen(2πx/n).</p>
+<p>El PDF afirma que la familia no está uniformemente acotada y que no converge uniformemente a 2πx. Sin embargo, esas afirmaciones parecen ser inconsistentes con la fórmula impresa y con la estimación que aparece en la propia demostración. Tal como está escrita, la fórmula sí está uniformemente acotada en [0,1] y converge uniformemente a 2πx. Conviene comprobar si hay una errata en el PDF antes de estudiar este ejemplo.</p>
+<p>Ejemplo 4. X = ℝ y fₙ(x) = e⁻⁽ˣ⁻ⁿ⁾².</p>
+<p>La familia está uniformemente acotada por 1 y es equicontinua. Sin embargo, no converge uniformemente a 0: aunque para cada x fijo fₙ(x) tiende a cero, en x = n se tiene fₙ(n) = 1.</p>
+<p>Este ejemplo muestra por qué la hipótesis de que X sea compacto es importante en Arzelà-Ascoli: sobre dominios no compactos, la acotación uniforme y la equicontinuidad no garantizan por sí solas la compacidad relativa.</p>
+<h3 id="s64"><a class="anchor" href="#s64" aria-label="Enlace a la sección">#</a>Aplicación a ecuaciones diferenciales: existencia de solución local</h3>
+<p>Teorema del PDF: Sea D ⊂ ℝ² abierto y conexo, y sea f: D → ℝ continua. Para todo punto inicial (x₀,y₀) ∈ D, la ecuación diferencial y′ = f(x,y) tiene una solución local.</p>
+<p>La idea es construir primero soluciones aproximadas y luego extraer una solución verdadera mediante compacidad.</p>
+<p>Como D es abierto, podemos elegir un rectángulo cerrado R* contenido en D y centrado en (x₀,y₀). Al ser compacto y f continua, f está acotada por una constante M y es uniformemente continua en R*.</p>
+<p>Construimos funciones poligonales aproximadas φₑ que cumplen:</p>
+<ul>
+<li><p>φₑ(x₀) = y₀.</p>
+</li>
+<li><p>|φ′ₑ(x)| ≤ M donde existe la derivada.</p>
+</li>
+<li><p>La gráfica de φₑ permanece dentro del rectángulo elegido.</p>
+</li>
+<li><p>El error de la ecuación es menor que ε: |φ′ₑ(x) − f(x,φₑ(x))| &lt; ε.</p>
+</li>
+</ul>
+<p>Para construirlas, dividimos el intervalo en tramos suficientemente pequeños y, en cada tramo, dibujamos una recta cuya pendiente es el valor de f en el extremo inicial del tramo. La continuidad uniforme de f garantiza que el error de aproximación sea pequeño.</p>
+<p>Como las funciones permanecen dentro del rectángulo, están uniformemente acotadas. Además, como sus pendientes tienen valor absoluto menor o igual que M, son equicontinuas. Por Arzelà-Ascoli, la familia es relativamente compacta y podemos extraer una subsucesión uniformemente convergente a una función continua φ.</p>
+<p>Las funciones aproximadas satisfacen la identidad integral:</p>
+<p>φₑ(x) = y₀ + ∫ₓ₀ˣ φ′ₑ(t) dt.</p>
+<p>Separamos el integrando en el error de aproximación y el valor de f. Cuando ε tiende a cero, el error desaparece; la convergencia uniforme de φₑ y la continuidad uniforme de f permiten pasar al límite en la integral. Obtenemos:</p>
+<p>φ(x) = y₀ + ∫ₓ₀ˣ f(t,φ(t)) dt.</p>
+<p>Por el teorema fundamental del cálculo, φ satisface φ′(x) = f(x,φ(x)). Así obtenemos una solución local de la ecuación diferencial.</p>
+<h3 id="s65"><a class="anchor" href="#s65" aria-label="Enlace a la sección">#</a>Ejemplo final: existencia no implica unicidad</h3>
+<p>El PDF considera la ecuación diferencial y′ = y²ᐟ³ con condición inicial (0,0).</p>
+<p>Presenta cuatro soluciones:</p>
+<ol type="1">
+<li><p>y = 0.</p>
+</li>
+<li><p>y = x³/27.</p>
+</li>
+<li><p>y = x³/27 si x ≥ 0, y = 0 si x &lt; 0.</p>
+</li>
+<li><p>y = x³/27 si x ≤ 0, y = 0 si x &gt; 0.</p>
+</li>
+</ol>
+<p>Las cuatro pasan por (0,0) y satisfacen la ecuación diferencial.</p>
+<p>Conclusión: la existencia de una solución no garantiza que sea única. El teorema demostrado asegura al menos una solución local, pero no afirma que sea la única.</p>
+<h3 id="s66"><a class="anchor" href="#s66" aria-label="Enlace a la sección">#</a>Hilo conductor para el examen oral</h3>
+<p>La compacidad puede caracterizarse mediante puntos de acumulación, sucesiones y cubrimientos abiertos. En espacios métricos, equivale a completitud más acotación total. También garantiza que las funciones continuas alcanzan sus extremos y que la continuidad implica continuidad uniforme cuando el dominio es compacto.</p>
+<p>Finalmente, Arzelà-Ascoli caracteriza la compacidad relativa de familias de funciones mediante la acotación uniforme y la equicontinuidad. Esta herramienta permite obtener una solución local de una ecuación diferencial continúa construyendo soluciones poligonales aproximadas y pasando al límite.</p>
+<p>La existencia está garantizada, pero la unicidad no necesariamente.</p>
+
+</article></main>
+<button id="top" class="btn" aria-label="Volver arriba">↑</button>
+<script>
+(function(){
+ var $=function(s,r){return (r||document).querySelector(s)},$$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+ var lis=$$('#toc li'),links=$$('#toc a'),q=$('#q');
+ function lvl(li){return +li.className.match(/l(\d)/)[1]}
+ // plegar/desplegar
+ function setFold(li,open){var b=$('.tg',li);if(!b||b.classList.contains('sp'))return;b.setAttribute('aria-expanded',open);
+  var L=lvl(li),i=lis.indexOf(li)+1;
+  for(;i<lis.length&&lvl(lis[i])>L;i++){ if(open){ var p=parentOf(lis[i]); lis[i].classList.toggle('folded',p&&!isOpen(p)) } else lis[i].classList.add('folded') }
+  apply()}
+ function parentOf(li){var L=lvl(li),i=lis.indexOf(li)-1;for(;i>=0;i--)if(lvl(lis[i])<L)return lis[i];return null}
+ function isOpen(li){var b=$('.tg',li);return !b||b.classList.contains('sp')||b.getAttribute('aria-expanded')==='true'}
+ function apply(){var t=q.value.trim().toLowerCase();
+  lis.forEach(function(li){var ok=!li.classList.contains('folded')||t;
+   if(t) ok=li.dataset.t.indexOf(t)>-1; li.classList.toggle('hide',!ok)})}
+ $$('#toc .tg').forEach(function(b){b.addEventListener('click',function(){var li=b.parentNode;setFold(li,b.getAttribute('aria-expanded')!=='true')})});
+ q.addEventListener('input',apply);
+ var allOpen=true;$('#fold').onclick=function(){allOpen=!allOpen;lis.forEach(function(li){var b=$('.tg',li);if(b&&!b.classList.contains('sp'))b.setAttribute('aria-expanded',allOpen);
+   if(lvl(li)>2)li.classList.toggle('folded',!allOpen)});apply()};
+ // navegación
+ links.forEach(function(a){a.addEventListener('click',function(){document.body.classList.remove('open')})});
+ $('#menu').onclick=function(){document.body.classList.toggle('open')};
+ document.addEventListener('click',function(e){if(document.body.classList.contains('open')&&!e.target.closest('#side'))document.body.classList.remove('open')});document.addEventListener('keydown',function(e){if(e.key==='/'&&document.activeElement!==q){e.preventDefault();document.body.classList.add('open');q.focus()}if(e.key==='Escape'){q.blur();document.body.classList.remove('open')}});
+ // scroll-spy
+ var hs=$$('#doc h2,#doc h3,#doc h4'),cur=null,tick=false;
+ function spy(){tick=false;var y=window.scrollY+90,h=hs[0];hs.forEach(function(x){if(x.offsetTop<=y)h=x});
+  if(h&&h.id!==cur){cur=h.id;links.forEach(function(a){a.classList.toggle('on',a.dataset.id===cur)});
+   var a=$('#toc a.on'),li=a&&a.parentNode;
+   // abrir ancestros si están plegados
+   var p=li&&parentOf(li);while(p){if(!isOpen(p))setFold(p,true);p=parentOf(p)}
+   if(a&&!q.value){var n=$('nav'),r=a.getBoundingClientRect(),nr=n.getBoundingClientRect();if(r.top<nr.top+40||r.bottom>nr.bottom-40)n.scrollTop+=r.top-nr.top-nr.height/3}}
+  var d=document.documentElement;$('#bar').style.transform='scaleX('+(window.scrollY/(d.scrollHeight-innerHeight||1))+')';
+  $('#top').style.display=window.scrollY>800?'block':'none'}
+ addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(spy)}},{passive:true});spy();
+ $('#top').onclick=function(){scrollTo({top:0})};
+ // tema
+ var th=$('#theme');th.onclick=function(){var r=document.documentElement,dark=getComputedStyle(r).getPropertyValue('--bg').trim()==='#17160f';var n=dark?'light':'dark';r.dataset.theme=n;try{localStorage.setItem('th',n)}catch(e){}};
+ try{var s=localStorage.getItem('th');if(s)document.documentElement.dataset.theme=s}catch(e){}
+})();
+</script>
+</body>
+</html>
